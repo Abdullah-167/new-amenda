@@ -31,7 +31,7 @@ const Images = () => {
 
     return (
         <section>
-            <div className='flex gap-5'>
+            <div className='flex gap-[10px]'>
                 <div className='max-h-[500px]'>
                     <Image className='max-h-[500px]' src={selectedImage} width={560} height={500} alt='slider-images' />
                 </div>
