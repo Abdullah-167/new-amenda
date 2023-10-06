@@ -12,7 +12,13 @@
 
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'SF Pro Display';
+}
+
+
+@font-face {
+  font-family: SF Pro Display;
+  src: url(../../src/Fonts/SF-Pro-Display-Medium.woff);
 }
 
 .time-line-tags-btn {
