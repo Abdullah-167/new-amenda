@@ -92,25 +92,25 @@ const TimeLine = () => {
                                                             <div className="w-[2px] h-[15px]  mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
                                                             <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
                                                             <div className="w-[2px] h-[15px] absolute mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
-                                                                <Image className="min-w-[244px] min-h-[244px] object-cover" src={newItem.mainImg} width={500} height={500} alt="time-line-image" />
+                                                                <Image className="min-w-[304px] min-h-[244px] object-cover" src={newItem.mainImg} width={500} height={500} alt="time-line-image" />
                                                                 <div className={` ${idx === 1 ? '' : 'bg-black'} bg-opacity-40 absolute w-full h-full top-0`}></div>
-                                                                <section className={` absolute w-full h-full top-[120px] pb-1 px-1`}>
+                                                                <section className={` absolute w-full h-full top-[150px] pb-1 px-1`}>
                                                                     {newItem.isImgname && (
                                                                         <p className="text-sm text-white pb-2">{newItem.imgName}</p>
                                                                     )}
                                                                     <div className="flex flex-wrap gap-2 ">
                                                                         {newItem.isBtnOne && (
-                                                                            <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[7px] px-1.5 flex justify-center items-center'>{newItem.btnOne}</p>
+                                                                            <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnOne}</p>
                                                                         )}
                                                                         {newItem.isBtnTwo && (
-                                                                            <p className='bg-white text-black  font-medium cursor-pointer py-[7px] px-1.5 flex justify-center items-center'>{newItem.btnTwo}</p>
+                                                                            <p className='bg-white text-black  font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnTwo}</p>
                                                                         )}
                                                                         {newItem.isBtnThree && (
 
-                                                                            <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[7px] px-1.5 flex justify-center items-center'>{newItem.btnThree}</p>
+                                                                            <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnThree}</p>
                                                                         )}
                                                                         {newItem.isBtnFour && (
-                                                                            <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[7px] px-1.5 flex justify-center items-center'>{newItem.btnFour}</p>
+                                                                            <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnFour}</p>
                                                                         )}
                                                                     </div>
                                                                 </section>
