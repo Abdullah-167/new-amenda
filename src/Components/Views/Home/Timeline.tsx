@@ -41,7 +41,7 @@ const TimeLine = () => {
             <div className=" mx-auto relative ">
                 <div className=" pb-10 px-5">
                     <div className=" flex justify-between border-t border-t-[#E5E7EB] border-b border-b-[#E5E7EB] py-5 mb-5">
-                        <div className="flex gap-4  px-5 max-w-[8500px]  ">
+                        <div className="flex gap-4  px-5 max-w-[8500px]  xl:overflow-auto overflow-x-scroll">
                             {DataA.map((item, index) => {
                                 return (
                                     <div
@@ -92,9 +92,9 @@ const TimeLine = () => {
                                                             <div className="w-[2px] h-[15px]  mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
                                                             <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
                                                             <div className="w-[2px] h-[15px] absolute mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
-                                                                <Image className="min-w-[304px] min-h-[244px] object-cover" src={newItem.mainImg} width={500} height={500} alt="time-line-image" />
+                                                                <Image className="min-w-[244px] min-h-[244px] object-cover" src={newItem.mainImg} width={500} height={500} alt="time-line-image" />
                                                                 <div className={` ${idx === 1 ? '' : 'bg-black'} bg-opacity-40 absolute w-full h-full top-0`}></div>
-                                                                <section className={` absolute w-full h-full top-[150px] pb-1 px-1`}>
+                                                                <section className={` absolute w-full h-full top-[130px] pb-1 px-1`}>
                                                                     {newItem.isImgname && (
                                                                         <p className="text-sm text-white pb-2">{newItem.imgName}</p>
                                                                     )}
@@ -115,7 +115,7 @@ const TimeLine = () => {
                                                                     </div>
                                                                 </section>
                                                                 <main className="bg-black inset-y-0 bg-opacity-40 absolute w-full h-full top-0 cursor-pointer">
-                                                                    <div className="flex gap-1 py-1 max-w-[120px] mt-24 px-2 mx-auto bg-white items-center justify-center">
+                                                                    <div className="flex gap-1 py-1 max-w-[120px] mt-[110px] px-2 mx-auto bg-white items-center justify-center">
                                                                         <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
                                                                         </svg>
