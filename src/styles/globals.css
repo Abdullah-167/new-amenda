@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.timeline-tatg {
+  background: rgba(243, 244, 246, 0.30);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.timt-line-tags:hover section {
+  display: none;
+}
+
+
+
+.timt-line-tags main {
+  transform: translateY(300px);
+  transition: transform 0.3s ease;
+  /* Adjust the duration and timing function as needed */
+}
+
+.timt-line-tags:hover main {
+  transform: translateY(0);
 }
