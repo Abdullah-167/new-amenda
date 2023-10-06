@@ -28,8 +28,8 @@ const Hero = () => {
                     </div>
                     <p className='text-[#797F88] text-[15px] mb-[30px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     <div className='flex justify-between max-w-[534px] text-[#797F88]'>
-                        <div className='border cursor-pointer max-h-[30px] border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center'>LP 6</div>
-                        <div>
+                        <div className='border cursor-pointer text-sm max-h-[30px] border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center'>LP 6</div>
+                        <div className='text-sm'>
                             <p className='border cursor-pointer border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center mb-2'>Altersgerechtes Wohnen</p>
                             <div className='flex gap-2 mb-2'>
                                 <p className='border cursor-pointer border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center'>3-Feld Sporthalle</p>

@@ -46,7 +46,7 @@ const TimeLine = () => {
                                 return (
                                     <div
                                         key={index}
-                                        className={` py-3 px-3 cursor-pointer ${activeTab === item.id ? 'bg-[#111827] text-white' : ''}`}
+                                        className={` py-3 px-3 cursor-pointer ${activeTab === item.id ? 'bg-[#111827] text-white' : 'text-[#797F88]'}`}
                                         onClick={() => handleClick(item.id)}
                                     >
                                         <h2 className="text-sm">{item.btnHeading}</h2>
@@ -88,7 +88,7 @@ const TimeLine = () => {
                                                     return (
                                                         <div key={idx} className="z-[1000] relative">
                                                             <p className=" text-sm text-center font-bold mb-4">{newItem.month}</p>
-                                                            <div className="bg-[#111827] text-[#fff] rounded-full flex justify-center z-[100] items-center h-[32px] max-w-[32px] mx-auto mb-2">{newItem.number}</div>
+                                                            <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] flex justify-center z-[100] items-center h-[32px] max-w-[32px] mx-auto mb-2">{newItem.number}</div>
                                                             <div className="w-[2px] h-[15px]  mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
                                                             <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
                                                             <div className="w-[2px] h-[15px] absolute mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
