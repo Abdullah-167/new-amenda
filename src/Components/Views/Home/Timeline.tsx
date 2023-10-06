@@ -93,7 +93,7 @@ const TimeLine = () => {
                                                             <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
                                                             <div className="w-[2px] h-[15px] absolute mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
                                                                 <Image className="min-w-[244px] min-h-[244px] object-cover" src={newItem.mainImg} width={500} height={500} alt="time-line-image" />
-                                                                <div className={` ${idx === 1 ? '' : 'bg-black'} bg-opacity-40 absolute w-full h-full top-0`}></div>
+                                                                <div className={` ${idx === 0 ? 'bg-black' : ''} bg-opacity-30 absolute w-full h-full top-0`}></div>
                                                                 <section className={` absolute w-full h-full top-[130px] pb-1 px-1`}>
                                                                     {newItem.isImgname && (
                                                                         <p className="text-sm text-white pb-2">{newItem.imgName}</p>

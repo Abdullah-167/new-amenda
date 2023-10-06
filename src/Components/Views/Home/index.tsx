@@ -7,7 +7,7 @@ import TimeLine from './Timeline'
 const Home = () => {
     return (
         <Layout>
-            <div className='flex xl:flex-row flex-col flex-grow gap-[90px] w-full'>
+            <div className='flex flex-grow gap-[90px] w-full'>
                 <Images />
                 <Hero />
             </div>
