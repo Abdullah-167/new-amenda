@@ -10,23 +10,23 @@
   box-sizing: border-box;
 }
 
-.timeline-tatg {
+.time-line-tags {
   background: rgba(243, 244, 246, 0.30);
 }
 
 
-.timt-line-tags:hover section {
+.time-line-tags:hover section {
   display: none;
 }
 
 
 
-.timt-line-tags main {
+.time-line-tags main {
   transform: translateY(300px);
   transition: transform 0.3s ease;
-  /* Adjust the duration and timing function as needed */
+
 }
 
-.timt-line-tags:hover main {
+.time-line-tags:hover main {
   transform: translateY(0);
 }
