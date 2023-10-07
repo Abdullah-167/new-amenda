@@ -33,7 +33,7 @@ const Images = () => {
         <section>
             <div className='hero-header-img flex 2xl:flex-nowrap flex-wrap gap-[10px]  mx-auto justify-center'>
                 <div className=''>
-                    <Image className='max-h-[500px] 2xl:max-h-full min-h-[400px] 2xl:min-h-[505px] 2xl:max-w-full max-w-[400px]' src={selectedImage} width={560} height={500} alt='slider-images' />
+                    <Image className='max-h-[500px] 2xl:max-h-full min-h-[400px] 2xl:min-h-[505px] 2xl:max-w-full max-w-[400px] w-full' src={selectedImage} width={560} height={500} alt='slider-images' />
                 </div>
                 <div className='pt-3 2xl:block flex gap-2'>
                     {images.map((item, index) => {
@@ -43,7 +43,7 @@ const Images = () => {
                                 key={index}
                                 onClick={() => handleImageClick(item.img)}
                             >
-                                <Image className={` 2xl:max-w-[70px] 2xl:min-h-[70px] min-h-[60px] max-w-[60px] ${selectedImage === item.img ? 'p-1 opacity-30' : ''}`} src={item.img} width={70} height={70} alt='slider-images' />
+                                <Image className={` 2xl:max-w-[70px] 2xl:min-h-[70px] min-h-[50px] sm:min-h-[60px] sm:max-w-[60px] ${selectedImage === item.img ? 'p-1 opacity-30' : ''}`} src={item.img} width={70} height={70} alt='slider-images' />
                             </div>
                         );
                     })}

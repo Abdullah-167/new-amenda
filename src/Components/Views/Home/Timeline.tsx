@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
+
 const TimeLine = () => {
     const [activeTab, setActiveTab] = useState(DataA[0].id);
     const [activeIconsIdx, setActiveIconsIdx] = useState(null);
@@ -39,7 +40,7 @@ const TimeLine = () => {
     return (
         <div className="py-12">
             <div className=" mx-auto relative ">
-                <div className=" pb-10 px-5">
+                <div className=" pb-10">
                     <div className=" flex 2xl:gap-0 gap-5 justify-between border-t border-t-[#E5E7EB] border-b border-b-[#E5E7EB] py-5 mb-5">
                         <div className="flex gap-4 px-5 xl:overflow-auto overflow-x-scroll">
                             {DataA.map((item, index) => {
@@ -75,7 +76,7 @@ const TimeLine = () => {
                         </div>
                         {DataA.map((item, index) => {
                             return (
-                                <div className="relative" key={index}
+                                <div className="sm:block hidden relative" key={index}
                                 >
                                     <div
                                         className={`transition-all duration-1000 relative ${activeTab === item.id ? "opacity-100" : "opacity-0"
@@ -91,7 +92,7 @@ const TimeLine = () => {
                                                             <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] flex justify-center z-[100] items-center h-[32px] max-w-[32px] mx-auto mb-2">{newItem.number}</div>
                                                             <div className="w-[2px] h-[15px]  mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
                                                             <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
-                                                            <div className="w-[2px] h-[15px] absolute mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
+                                                                <div className="w-[2px] h-[15px] absolute mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
                                                                 <Image className="min-w-[244px] min-h-[244px] object-cover" src={newItem.mainImg} width={500} height={500} alt="time-line-image" />
                                                                 <div className={` ${idx === 0 ? 'bg-black' : ''} bg-opacity-30 absolute w-full h-full top-0`}></div>
                                                                 <section className={` absolute w-full h-full top-[130px] pb-1 px-1`}>
@@ -137,6 +138,39 @@ const TimeLine = () => {
                                 </div>
                             );
                         })}
+                        <div>
+                            <div className="flex items-center justify-between ">
+                                <h3 className="text-base text-[#111827]">Timeline</h3>
+                                <p className='border cursor-pointer text-[#797F88] border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center mb-2'>Altersgerechtes Wohnen</p>
+                            </div>
+
+                            <div>
+                                {resTimeline.map((item, index) => {
+                                    return (
+                                        <div className="mb-[24px]" key={index}>
+                                            <p className="text-[#111827] text-sm font-bold pb-[18px]">{item.date}</p>
+                                            <div>
+                                                {item.data.map((newItem, idx) => {
+                                                    return (
+                                                        <div key={idx} className=" flex gap-4 items-center justify-between  relative mb-[7px]">
+                                                            <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] inset-y-0 top-8 flex justify-center  z-[100] items-center h-[32px] min-w-[32px] mx-auto mb-2">{newItem.number}</div>
+                                                            <div className="flex justify-between px-[10px] py-[10px] border border-[#E5E7EB] max-w-[270px] min-w-[270px] ">
+                                                                <div className="">
+                                                                    <h2 className="text-[#111827] text-sm pb-[6px]">{newItem.heading}</h2>
+                                                                    <p className="text-[#4B5563] text-sm">{newItem.description}</p>
+                                                                </div>
+                                                                <Image className={``} src={newItem.mainImg} width={70} height={70} alt='slider-images' />
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -159,6 +193,114 @@ const social = [
     },
 ];
 
+
+const resTimeline = [
+    {
+        date: 'September, 2023',
+        data: [
+            {
+                mainImg: '/img1.png',
+                heading: 'Event Name',
+                description: 'ESBR Essig-Haus Bremen',
+                number: '2',
+                month: 'OCTOBER, 2023',
+                line: '',
+                imgName: 'pexels-photo-2525329.jpeg',
+
+            },
+            {
+                mainImg: '/img1.png',
+                heading: '40 Mother’s Day Breakfast and Brunch Recipes',
+                description: 'ESBR Essig-Haus Bremen',
+                number: '2',
+                month: 'OCTOBER, 2023',
+                line: '',
+                imgName: 'pexels-photo-2525329.jpeg',
+
+            },
+
+        ]
+    },
+    {
+        date: 'September, 2023',
+        data: [
+            {
+                mainImg: '/img1.png',
+                heading: 'Event Name',
+                description: 'ESBR Essig-Haus Bremen',
+                number: '2',
+                month: 'OCTOBER, 2023',
+                line: '',
+                imgName: 'pexels-photo-2525329.jpeg',
+
+            },
+            {
+                mainImg: '/img1.png',
+                heading: '40 Mother’s Day Breakfast and Brunch Recipes',
+                description: 'ESBR Essig-Haus Bremen',
+                number: '2',
+                month: 'OCTOBER, 2023',
+                line: '',
+                imgName: 'pexels-photo-2525329.jpeg',
+
+            },
+
+        ]
+    },
+    {
+        date: 'September, 2023',
+        data: [
+            {
+                mainImg: '/img1.png',
+                heading: 'Event Name',
+                description: 'ESBR Essig-Haus Bremen',
+                number: '2',
+                month: 'OCTOBER, 2023',
+                line: '',
+                imgName: 'pexels-photo-2525329.jpeg',
+
+            },
+            {
+                mainImg: '/img1.png',
+                heading: '40 Mother’s Day Breakfast and Brunch Recipes',
+                description: 'ESBR Essig-Haus Bremen',
+                number: '2',
+                month: 'OCTOBER, 2023',
+                line: '',
+                imgName: 'pexels-photo-2525329.jpeg',
+
+            },
+
+        ]
+    },
+    {
+        date: 'September, 2023',
+        data: [
+            {
+                mainImg: '/img1.png',
+                heading: 'Event Name',
+                description: 'ESBR Essig-Haus Bremen',
+                number: '2',
+                month: 'OCTOBER, 2023',
+                line: '',
+                imgName: 'pexels-photo-2525329.jpeg',
+
+            },
+            {
+                mainImg: '/img1.png',
+                heading: '40 Mother’s Day Breakfast and Brunch Recipes',
+                description: 'ESBR Essig-Haus Bremen',
+                number: '2',
+                month: 'OCTOBER, 2023',
+                line: '',
+                imgName: 'pexels-photo-2525329.jpeg',
+
+            },
+
+        ]
+    },
+]
+
 export const DataA = [
     {
         id: 1,
@@ -173,14 +315,7 @@ export const DataA = [
                 line: '',
                 imgName: 'pexels-photo-2525329.jpeg',
                 isImgname: true,
-                btnOne: 'buildings',
-                btnTwo: 'construction',
-                btnThree: 'amenda',
-                btnFour: 'this is a long tag',
-                isBtnOne: true,
-                isBtnTwo: true,
-                isBtnThree: true,
-                isBtnFour: true
+
             },
             {
                 mainImg: '/img1.png',
@@ -847,7 +982,7 @@ export const DataA = [
                 isBtnThree: false,
                 isBtnFour: false
             },
-        
+
 
         ],
     },
@@ -967,3 +1102,6 @@ export const DataA = [
         ],
     },
 ];
+
+
+
