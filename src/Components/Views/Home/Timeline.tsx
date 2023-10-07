@@ -144,22 +144,22 @@ const TimeLine = () => {
                                 <p className='border cursor-pointer text-[#797F88] border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center mb-2'>Altersgerechtes Wohnen</p>
                             </div>
 
-                            <div>
+                            <div className="sm:hidden block">
                                 {resTimeline.map((item, index) => {
                                     return (
-                                        <div className="mb-[24px]" key={index}>
-                                            <p className="text-[#111827] text-sm font-bold pb-[18px]">{item.date}</p>
-                                            <div>
+                                        <div className="relative overflow-hidden mb-[24px]" key={index}>
+                                            <p className="text-[#111827] text-sm font-bold mb-[18px]">{item.date}</p>
+                                            <div className=" rotate-90 absolute top-12 -left-[133px] border-syl w-full h-1 "></div>
+                                            <div className=" ">
                                                 {item.data.map((newItem, idx) => {
                                                     return (
-                                                        <div key={idx} className=" flex gap-4 items-center justify-between  relative mb-[7px]">
+                                                        <div key={idx} className=" flex  items-center justify-between  relative mb-[7px]">
                                                             <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] inset-y-0 top-8 flex justify-center  z-[100] items-center h-[32px] min-w-[32px] mx-auto mb-2">{newItem.number}</div>
                                                             <div className="flex justify-between px-[10px] py-[10px] border border-[#E5E7EB] max-w-[270px] min-w-[270px] ">
                                                                 <div className="">
                                                                     <h2 className="text-[#111827] text-sm pb-[6px]">{newItem.heading}</h2>
                                                                     <p className="text-[#4B5563] text-sm">{newItem.description}</p>
                                                                 </div>
-                                                                <Image className={``} src={newItem.mainImg} width={70} height={70} alt='slider-images' />
                                                             </div>
                                                         </div>
                                                     )
