@@ -40,8 +40,8 @@ const TimeLine = () => {
         <div className="py-12">
             <div className=" mx-auto relative ">
                 <div className=" pb-10 px-5">
-                    <div className=" flex justify-between border-t border-t-[#E5E7EB] border-b border-b-[#E5E7EB] py-5 mb-5">
-                        <div className="flex gap-4  px-5 max-w-[8500px]  xl:overflow-auto overflow-x-scroll">
+                    <div className=" flex 2xl:gap-0 gap-5 justify-between border-t border-t-[#E5E7EB] border-b border-b-[#E5E7EB] py-5 mb-5">
+                        <div className="flex gap-4 px-5 xl:overflow-auto overflow-x-scroll">
                             {DataA.map((item, index) => {
                                 return (
                                     <div
@@ -49,7 +49,7 @@ const TimeLine = () => {
                                         className={` py-3 px-3 cursor-pointer ${activeTab === item.id ? 'bg-[#111827] text-white' : 'text-[#797F88]'}`}
                                         onClick={() => handleClick(item.id)}
                                     >
-                                        <h2 className="text-sm">{item.btnHeading}</h2>
+                                        <h2 className="text-sm whitespace-nowrap">{item.btnHeading}</h2>
                                     </div>
                                 );
                             })}

@@ -7,8 +7,10 @@ import TimeLine from './Timeline'
 const Home = () => {
     return (
         <Layout>
-            <div className='flex flex-grow gap-[90px] w-full'>
-                <Images />
+            <div className='hero-header flex  2xl:gap-[90px] gap-10 w-full'>
+                <div className=' flex-grow'>
+                    <Images />
+                </div>
                 <Hero />
             </div>
             <TimeLine />

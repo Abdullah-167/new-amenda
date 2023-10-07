@@ -44,3 +44,19 @@ body {
 .border-syl {
   border-bottom: 1px dashed gray;
 }
+
+
+
+@media (max-width: 1224px) {
+  .hero-header {
+    flex-wrap: wrap;
+  }
+  .hero-header-img {
+    max-width: 100%;
+  }
+}
+
+
+.hero-header-img {
+  max-width: 500px;
+}

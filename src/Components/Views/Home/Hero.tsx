@@ -4,9 +4,9 @@ import TimeLine from './Timeline'
 const Hero = () => {
     return (
         <header>
-            <div className='flex justify-between gap-[144px] pt-8'>
-                <div className='max-w-[640px]'>
-                    <div className='flex gap-[10px] items-center text-[#111827] text-sm font-bold cursor-pointer mb-[50px]'>
+            <div className='md:flex md:justify-between gap-[144px] pt-8'>
+                <div className='max-w-[640px] md:mb-0 mb-6'>
+                    <div className='flex gap-[10px] items-center text-[#111827] text-sm font-bold cursor-pointer mb-[30px] 2xl:mb-[50px]'>
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 18C11.3869 18 13.6761 17.0518 15.364 15.364C17.0518 13.6761 18 11.3869 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948212 11.3869 0 9 0C6.61305 0 4.32387 0.948212 2.63604 2.63604C0.948212 4.32387 0 6.61305 0 9C0 11.3869 0.948212 13.6761 2.63604 15.364C4.32387 17.0518 6.61305 18 9 18ZM4.5 8.982C4.49848 8.88518 4.51651 8.78905 4.55301 8.69936C4.5895 8.60966 4.64371 8.52825 4.7124 8.46L7.6752 5.5062C7.74245 5.43883 7.82231 5.38537 7.91022 5.34886C7.99813 5.31236 8.09237 5.29353 8.18756 5.29344C8.28275 5.29336 8.37703 5.31203 8.465 5.34838C8.55298 5.38473 8.63293 5.43805 8.7003 5.5053C8.76767 5.57255 8.82113 5.65241 8.85763 5.74032C8.89414 5.82823 8.91297 5.92247 8.91305 6.01766C8.91314 6.11285 8.89447 6.20713 8.85812 6.2951C8.82177 6.38308 8.76845 6.46303 8.7012 6.5304L6.966 8.2674L12.78 8.2674C12.971 8.2674 13.1541 8.34326 13.2891 8.47828C13.4241 8.61331 13.5 8.79644 13.5 8.9874C13.5 9.17836 13.4241 9.36149 13.2891 9.49652C13.1541 9.63154 12.971 9.7074 12.78 9.7074L6.9498 9.7074L8.7012 11.4588C8.83726 11.5949 8.91369 11.7794 8.91369 11.9718C8.91369 12.0671 8.89493 12.1614 8.85847 12.2494C8.82201 12.3375 8.76857 12.4174 8.7012 12.4848C8.63383 12.5522 8.55385 12.6056 8.46583 12.6421C8.37781 12.6785 8.28347 12.6973 8.1882 12.6973C7.99579 12.6973 7.81126 12.6209 7.6752 12.4848L4.7124 9.531C4.6448 9.46381 4.59122 9.38386 4.55476 9.2958C4.5183 9.20774 4.49969 9.11331 4.5 9.018V8.982Z" fill="#111827" />
                         </svg>
@@ -27,8 +27,8 @@ const Hero = () => {
                         </div>
                     </div>
                     <p className='text-[#797F88] text-[15px] mb-[30px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <div className='flex justify-between max-w-[534px] text-[#797F88]'>
-                        <div className='border cursor-pointer text-sm max-h-[30px] border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center'>LP 6</div>
+                    <div className='flex flex-wrap justify-between max-w-[534px] text-[#797F88]'>
+                        <div className='border cursor-pointer text-sm max-h-[30px] border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center mb-2'>LP 6</div>
                         <div className='text-sm'>
                             <p className='border cursor-pointer border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center mb-2'>Altersgerechtes Wohnen</p>
                             <div className='flex gap-2 mb-2'>
@@ -40,8 +40,8 @@ const Hero = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col'>
-                    <div className=' border border-[#E5E7EB] px-3 py-3 mb-[10px]'>
+                <div className='flex flex-row gap-3 md:gap-0 md:flex-col'>
+                    <div className='border border-[#E5E7EB] px-3 py-3 mb-[10px]'>
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.89252 6.51599C10.3799 6.74868 10.8043 7.09494 11.1301 7.52567C11.4559 7.9564 11.6736 8.45903 11.7648 8.99133C11.8561 9.52363 11.8183 10.0701 11.6546 10.5847C11.4909 11.0994 11.206 11.5672 10.824 11.949L7.44902 15.324C6.81608 15.9569 5.95763 16.3125 5.06252 16.3125C4.16741 16.3125 3.30896 15.9569 2.67602 15.324C2.04308 14.691 1.6875 13.8326 1.6875 12.9375C1.6875 12.0424 2.04308 11.1839 2.67602 10.551L3.99377 9.23324M14.0063 8.76674L15.324 7.44899C15.957 6.81605 16.3125 5.9576 16.3125 5.06249C16.3125 4.16738 15.957 3.30893 15.324 2.67599C14.6911 2.04305 13.8326 1.68747 12.9375 1.68747C12.0424 1.68747 11.184 2.04305 10.551 2.67599L7.17602 6.05099C6.794 6.43274 6.50917 6.9006 6.34546 7.41526C6.18175 7.92992 6.14393 8.47635 6.2352 9.00865C6.32646 9.54095 6.54414 10.0436 6.86994 10.4743C7.19574 10.905 7.62015 11.2513 8.10752 11.484" stroke="#797F88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
