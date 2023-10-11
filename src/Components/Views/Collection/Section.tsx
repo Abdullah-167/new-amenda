@@ -90,7 +90,7 @@ const Section = () => {
                     </div>
                 </div>
                 {handleCollection && (
-                    <div className='fixed bg-opacity-50 flex justify-center items-center inset-0 pt-5 bg-black mx-auto z-[2000]'>
+                    <div className='fixed bg-opacity-50 flex justify-center items-center inset-0 pt-5 bg-black mx-auto z-[4000]'>
                         <div className=' relative bg-[white] px-[50px] pb-[50px] max-w-[500px] max-h-[698px] mx-auto'>
                             <div className=' absolute right-[10px] flex justify-end px-[10px] py-[10px]'>
                                 <svg className=' cursor-pointer' width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={toggelCollection}>
