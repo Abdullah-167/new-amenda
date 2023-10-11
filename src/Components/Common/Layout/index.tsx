@@ -20,8 +20,8 @@ const Layout = ({ children }: any) => {
                 <div className='right-5 text-3xl ml-2 pt-[25px] cursor-pointer z-[2000] text-black md:hidden block' onClick={handleTab}><RxHamburgerMenu /></div>
             </div>
             <div className=''>
-                <div className={`fixed  top-0 w-full h-full max-w-[256px] bg-[#F3F4F6] transition-all duration-300 ${toggelTab ? 'left-0' : ' -left-[400px]  md:left-0 '}`}>
-                    <div className=' absolute right-3 top-4 text-3xl ml-2 pt-3 cursor-pointer z-[4000] md:hidden block' onClick={handleTab}><RxCross1 /></div>
+                <div className={`fixed z-[3000] top-0 w-full h-full max-w-[256px] bg-[#F3F4F6] transition-all duration-300 ${toggelTab ? 'left-0' : ' -left-[400px]  md:left-0 '}`}>
+                    <div className=' absolute right-3 top-4 text-3xl ml-2 pt-3 cursor-pointer md:hidden block' onClick={handleTab}><RxCross1 /></div>
                     <Sidebar />
                 </div>
             </div>

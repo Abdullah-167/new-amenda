@@ -1,28 +1,42 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Section = () => {
 
     const [handleModale, setHandleModale] = useState(false);
+    const [handleCollection, setHandleCollection] = useState(false);
 
     const handleDropdoen = () => {
         setHandleModale(!handleModale)
     }
 
 
+    const toggelCollection = () => {
+        setHandleCollection(!handleCollection)
+        setHandleModale(false)
+    }
+
+    useEffect(() => {
+        if (handleCollection) {
+            document.body.classList.add('modal-open');
+        } else {
+            document.body.classList.remove('modal-open');
+        }
+    }, [handleCollection]);
+
     return (
         <section>
-            <div>
+            <div className='pt-[30px]'>
                 <div className='flex gap-[15px] items-center cursor-pointer mb-[20px]' onClick={handleDropdoen}>
                     <h1 className=' font-bold text-[#111827] text-[24px]'>Medienübersicht</h1>
                     <Image className={` transition-all duration-300 ${handleModale ? ' rotate-180 ' : ''}`} src={'/arrowdown.svg'} alt={'btn-arrow'} width={20} height={20} />
                 </div>
                 {handleModale && (
-                    <div className='shadow-dropdown absolute z-[2000] top-[50px]  min-w-[294px] bg-[#FFF] px-[30px] pb-[30px]'>
+                    <div className='shadow-dropdown absolute z-[2000] top-[80px]  min-w-[294px] bg-[#FFF] px-[30px] pb-[30px]'>
                         <p className='text-[#111827] text-lg font-bold py-[20px] cursor-pointer'>Collection 1</p>
                         <p className='text-[#111827] text-lg font-bold pb-[20px] cursor-pointer'>Collection 1</p>
                         <p className='text-[#111827] text-lg font-bold pb-[20px] cursor-pointer'>Collection 1</p>
-                        <div className='flex text-white justify-between py-[11px] px-[20px] cursor-pointer bg-[#111827] '>
+                        <div className='flex text-white justify-between py-[11px] px-[20px] cursor-pointer bg-[#111827] ' onClick={toggelCollection}>
                             <span>Creat New Collection</span>
                             <span>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,8 +48,8 @@ const Section = () => {
                         </div>
                     </div>
                 )}
-                <div className='flex justify-between items-center'>
-                    <div className='flex gap-20'>
+                <div className='flex justify-between items-center pb-[61px]'>
+                    <div className='flex gap-10 2xl:gap-20'>
                         <div className='flex items-center gap-[10px] cursor-pointer'>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 0C3.58804 0 0 3.58804 0 8C0 12.412 3.58804 16 8 16C12.412 16 16 12.412 16 8C16 3.58804 12.412 0 8 0ZM8 1.06667C11.8355 1.06667 14.9333 4.16451 14.9333 8C14.9333 11.8355 11.8355 14.9333 8 14.9333C4.16451 14.9333 1.06667 11.8355 1.06667 8C1.06667 4.16451 4.16451 1.06667 8 1.06667ZM4.73889 4.26111C4.63838 4.27189 4.54301 4.311 4.46387 4.37389C4.38474 4.43679 4.32511 4.52087 4.29192 4.61635C4.25874 4.71183 4.25337 4.81477 4.27644 4.91319C4.2995 5.0116 4.35006 5.10144 4.42222 5.17222L7.24444 8L4.42222 10.8222C4.36765 10.8706 4.32358 10.9296 4.29273 10.9957C4.26187 11.0618 4.24489 11.1334 4.24283 11.2063C4.24077 11.2792 4.25367 11.3517 4.28075 11.4194C4.30782 11.4871 4.34849 11.5486 4.40024 11.5999C4.45198 11.6513 4.51371 11.6915 4.58161 11.7181C4.64952 11.7447 4.72214 11.757 4.79501 11.7544C4.86788 11.7518 4.93944 11.7343 5.00527 11.703C5.07111 11.6717 5.12982 11.6271 5.17778 11.5722L8 8.75L10.8222 11.5722C10.8702 11.6271 10.9289 11.6717 10.9947 11.703C11.0606 11.7343 11.1321 11.7518 11.205 11.7544C11.2779 11.757 11.3505 11.7447 11.4184 11.7181C11.4863 11.6915 11.548 11.6513 11.5998 11.5999C11.6515 11.5486 11.6922 11.4871 11.7193 11.4194C11.7463 11.3517 11.7592 11.2792 11.7572 11.2063C11.7551 11.1334 11.7381 11.0618 11.7073 10.9957C11.6764 10.9296 11.6323 10.8706 11.5778 10.8222L8.75556 8L11.5778 5.17222C11.6578 5.0942 11.7113 4.99302 11.7307 4.88297C11.7501 4.77291 11.7344 4.65954 11.6859 4.55886C11.6374 4.45817 11.5585 4.37527 11.4604 4.32184C11.3622 4.26842 11.2498 4.24718 11.1389 4.26111C11.018 4.27705 10.9063 4.33391 10.8222 4.42222L8 7.24444L5.17778 4.42222C5.12166 4.3638 5.05297 4.31893 4.97693 4.29102C4.90088 4.2631 4.81948 4.25288 4.73889 4.26111Z" fill="#797F88" />
@@ -75,24 +89,104 @@ const Section = () => {
                         </svg>
                     </div>
                 </div>
-                <div className='grid grid-cols-5'>
+                {handleCollection && (
+                    <div className='fixed bg-opacity-50 flex justify-center items-center inset-0 pt-5 bg-black mx-auto z-[2000]'>
+                        <div className=' relative bg-[white] px-[50px] pb-[50px] max-w-[500px] max-h-[698px] mx-auto'>
+                            <div className=' absolute right-[10px] flex justify-end px-[10px] py-[10px]'>
+                                <svg className=' cursor-pointer' width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={toggelCollection}>
+                                    <g opacity="0.5">
+                                        <path d="M7.5 22.5L22.5 7.5M7.5 7.5L22.5 22.5" stroke="#797F88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div className='pt-[40px]'>
+                                <h2 className=' text-2xl text-[#111827] pb-[30px] font-bold text-center'>Create New Collection</h2>
+                                <div className='pb-[20px]'>
+                                    <label className='text-[#797F88] text-sm pb-[12px] block'>Collection Name</label>
+                                    <input className='bg-[#F3F4F6]  outline-none py-[12px] px-2 w-full' type="text" />
+                                </div>
+                                <div className='pb-[20px]'>
+                                    <label className='text-[#797F88] text-sm pb-[12px] block'>Description</label>
+                                    <textarea className='bg-[#F3F4F6]  outline-none py-[10px] px-2 min-h-[130px] w-full' />
+                                </div>
+                                <div className='flex gap-1'>
+                                    <p className='text-[#797F88] text-sm pb-[12px] block'>Auto Create from Tags</p>
+                                    <sup className='pt-2'>
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 0C4.0111 0 3.0444 0.293245 2.22215 0.842652C1.39991 1.39206 0.759043 2.17295 0.380605 3.08658C0.00216641 4.00021 -0.0968502 5.00555 0.0960758 5.97545C0.289002 6.94536 0.765206 7.83627 1.46447 8.53553C2.16373 9.23479 3.05465 9.711 4.02455 9.90392C4.99445 10.0969 5.99979 9.99783 6.91342 9.6194C7.82705 9.24096 8.60794 8.60009 9.15735 7.77785C9.70676 6.9556 10 5.98891 10 5C10 3.67392 9.47322 2.40215 8.53553 1.46447C7.59785 0.526784 6.32608 0 5 0ZM5.86 7.579C5.83811 7.60674 5.81215 7.63101 5.783 7.651C5.38117 7.93812 4.90084 8.09485 4.407 8.1C3.955 8.1 3.707 7.785 3.807 7.345C3.933 6.817 4.064 6.291 4.192 5.764C4.20993 5.71757 4.21855 5.66806 4.21734 5.6183C4.21614 5.56854 4.20515 5.51951 4.185 5.474C4.14631 5.41154 4.08736 5.36424 4.018 5.34C3.97942 5.32931 3.93991 5.32227 3.9 5.319C3.852 5.308 3.781 5.3 3.746 5.247L3.735 5.23C3.72258 5.21194 3.71394 5.19157 3.70957 5.17009C3.70521 5.14861 3.70522 5.12648 3.70961 5.10501C3.714 5.08354 3.72267 5.06317 3.73511 5.04513C3.74755 5.02709 3.7635 5.01174 3.782 5L3.873 4.94L4.008 4.865C4.08834 4.82301 4.17116 4.78594 4.256 4.754C4.42928 4.68548 4.60878 4.63391 4.792 4.6C4.90273 4.58028 5.01464 4.56792 5.127 4.563C5.2178 4.56262 5.30836 4.57235 5.397 4.592C5.722 4.67 5.885 4.959 5.797 5.311C5.672 5.843 5.539 6.373 5.409 6.9C5.347 7.152 5.409 7.262 5.663 7.33C5.701 7.34 5.74 7.347 5.779 7.356C5.91 7.39 5.941 7.472 5.86 7.579ZM5.433 3.607C5.26385 3.6062 5.09874 3.55517 4.95862 3.46041C4.8185 3.36564 4.70968 3.23139 4.64596 3.07469C4.58224 2.918 4.5665 2.7459 4.60072 2.58024C4.63494 2.41458 4.71759 2.26282 4.83818 2.14419C4.95877 2.02557 5.11188 1.94543 5.27808 1.91394C5.44428 1.88245 5.61609 1.90102 5.77171 1.96731C5.92734 2.0336 6.05978 2.14461 6.15223 2.28627C6.24468 2.42793 6.29298 2.59385 6.291 2.763C6.28784 2.98829 6.19599 3.20324 6.03537 3.36124C5.87475 3.51924 5.65831 3.60755 5.433 3.607Z" fill="#797F88" />
+                                        </svg>
+                                    </sup>
+                                </div>
+                                <div className='bg-[#F3F4F6] py-[9px] px-[10px] mb-[20px]'>
+                                    <div className='flex gap-2 items-center  '>
+                                        <div className='flex gap-2 items-center bg-[#fff] px-2 py-[5px] cursor-pointer'>
+                                            <p className='text-[#797F88] text-sm block'>buildings</p>
+                                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.5 6.5L6.5 1.5M1.5 1.5L6.5 6.5" stroke="#797F88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div className='flex gap-2 items-center bg-[#fff] px-2 py-[5px] cursor-pointer'>
+                                            <p className='text-[#797F88] text-sm block'>buildings</p>
+                                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.5 6.5L6.5 1.5M1.5 1.5L6.5 6.5" stroke="#797F88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div className='flex gap-2 items-center bg-[#fff] px-2 py-[5px] cursor-pointer'>
+                                            <p className='text-[#797F88] text-sm block'>buildings</p>
+                                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.5 6.5L6.5 1.5M1.5 1.5L6.5 6.5" stroke="#797F88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <p className='text-[#797F88] text-sm block cursor-pointer'>Add A Tag</p>
+                                    </div>
+                                </div>
+                                <p className='text-[#797F88] text-sm block cursor-pointer pb-3'>Share with</p>
+                                <div className='flex gap-2 items-center bg-[#F3F4F6] py-[9px] px-[10px] mb-[30px]'>
+                                    <div className='flex gap-2 items-center bg-[#fff] px-2 py-[5px] cursor-pointer'>
+                                        <Image src={'/vin.svg'} alt='' width={26} height={26} />
+                                        <p className='text-[#797F88] text-sm block'>buildings</p>
+                                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 6.5L6.5 1.5M1.5 1.5L6.5 6.5" stroke="#797F88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <p className='text-[#797F88] text-sm block cursor-pointer'>Add more</p>
+                                </div>
+                                <div className='flex text-white text-center justify-center py-[11px] px-[20px] cursor-pointer bg-[#111827] ' onClick={toggelCollection}>
+                                    <span>Creat New Collection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+                <div className='grid grid-cols-5 gap-x-[10px] gap-y-[11px] grid-rows-1'>
                     {images.map((item, index) => {
                         return (
                             <div key={index} className="z-[1000] relative">
                                 <div className="time-line-tags relative  overflow-hidden">
                                     <Image className={`max-w-[304px] ${index === 0 ? 'min-h-[296px]' :
-                                            index === 1 ? 'min-h-[456px]' :
-                                                index === 2 ? 'min-h-[202px]' :
-                                                    ''}`} src={item.img} width={500} height={500} alt="time-line-image" />
+                                        index === 1 ? ' row-span-7' :
+                                            index === 2 ? 'min-h-[202px]' :
+                                                index === 3 ? 'min-h-[150px] max-h-[150px]' :
+                                                    index === 4 ? 'min-h-[430px] max-h-[430px]' :
+                                                        ''}`} src={item.img} width={500} height={500} alt="time-line-image" />
                                     <div className={` ${index === 0 ? 'bg-black' : ''} bg-opacity-30 absolute w-full h-full top-0`}></div>
-                                    <main className="bg-black inset-y-0 bg-opacity-40 absolute w-full h-full top-0 cursor-pointer">
-                                        <div className="flex gap-1 py-1 max-w-[120px] mt-[110px] px-2 mx-auto bg-white items-center justify-center">
-                                            <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
-                                            </svg>
-                                            <p className="text-[13px] text-[#111827] font-medium">View Images</p>
+                                    <main className="bg-black inset-y-0 bg-opacity-40  flex justify-center items-center absolute w-full h-full">
+                                        <div className=''>
+                                            <p className='text-[#FFF] text-lg font-bold pb-[25px]  cursor-pointer'>{item.imgName}</p>
+                                            <div className=" cursor-pointer flex gap-1 py-1 max-w-[120px] px-2 mx-auto bg-white items-center justify-center">
+                                                <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
+                                                </svg>
+                                                <p className="text-[13px] text-[#111827] font-medium">View Images</p>
+                                            </div>
                                         </div>
                                     </main>
+                                    <div className=' absolute top-0 left-0 p-[7px]'>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="24" height="24" fill="white" />
+                                            <path d="M5 12.55L6.213 11.3978L9.685 14.6957L17.788 7L19 8.15217L9.686 17L5 12.55Z" fill="#32BA7C" />
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                         )
@@ -107,18 +201,51 @@ export default Section;
 
 const images = [
     {
-        img: '/1.png'
+        img: '/1.png',
+        imgName: 'Collection Name Here'
     },
     {
-        img: '/1.png'
+        img: '/1.png',
+        imgName: 'Collection Name Here'
     },
     {
-        img: '/1.png'
+        img: '/1.png',
+        imgName: 'Collection Name Here'
     },
     {
-        img: '/1.png'
+        img: '/1.png',
+        imgName: 'Collection Name Here'
     },
     {
-        img: '/1.png'
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
     },
 ]

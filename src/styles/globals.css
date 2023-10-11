@@ -66,3 +66,13 @@ body {
 .shadow-dropdown {
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
 }
+
+
+.modal-open {
+  overflow: hidden;
+}
+
+/* 
+.collection-bg {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url(<path-to-image>), lightgray 50% / cover no-repeat; 
+} */
