@@ -4,8 +4,8 @@ import React from 'react'
 const RightBar = () => {
     return (
         <aside>
-            <div className='min-w-[400px] h-full bg-[#F3F4F6] p-5 min-h-screen'>
-                <div className=' max-w-[356px] max-h-[418px] bg-white overflow-y-scroll scroll-bar pb-[20px] pt-[13px] mb-[10px]'>
+            <div className=' 2xl:block min-w-[400px] w-full h-full bg-[#F3F4F6] p-5 min-h-screen'>
+                <div className=' 2xl:max-w-[356px] max-h-[418px] bg-white overflow-y-scroll scroll-bar pb-[20px] pt-[13px] mb-[10px]'>
                     <h1 className=' text-[#111827]  px-5 font-bold text-base pt-[13px] pb-[17px] mb-[17px] border-b border-b-[#E5E7EB]'>Kürzliche Projekt Updates</h1>
                     <div className=" px-5">
                         {updates.map((item, index) => {
@@ -30,7 +30,7 @@ const RightBar = () => {
                         })}
                     </div>
                 </div>
-                <div className=' max-w-[356px] bg-white px-5 max-h-[612px] overflow-y-scroll scroll-bar pb-[20px] pt-[13px]'>
+                <div className=' 2xl:max-w-[356px] bg-white px-5 max-h-[612px] overflow-y-scroll scroll-bar pb-[20px] pt-[13px]'>
                     <div className="flex items-center justify-between ">
                         <h3 className="text-base text-[#111827]">Timeline</h3>
                         <p className='border cursor-pointer text-[#797F88] border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center mb-2'>Altersgerechtes Wohnen</p>

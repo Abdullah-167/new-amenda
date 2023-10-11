@@ -48,8 +48,8 @@ const Section = () => {
                         </div>
                     </div>
                 )}
-                <div className='flex justify-between items-center pb-[61px]'>
-                    <div className='flex gap-10 2xl:gap-20'>
+                <div className='flex justify-between items-center pb-[61px] 2xl:flex-nowrap flex-wrap 2xl:gap-y-0 gap-y-5'>
+                    <div className='flex sm:flex-nowrap flex-wrap gap-4 sm:gap-10 2xl:gap-20'>
                         <div className='flex items-center gap-[10px] cursor-pointer'>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 0C3.58804 0 0 3.58804 0 8C0 12.412 3.58804 16 8 16C12.412 16 16 12.412 16 8C16 3.58804 12.412 0 8 0ZM8 1.06667C11.8355 1.06667 14.9333 4.16451 14.9333 8C14.9333 11.8355 11.8355 14.9333 8 14.9333C4.16451 14.9333 1.06667 11.8355 1.06667 8C1.06667 4.16451 4.16451 1.06667 8 1.06667ZM4.73889 4.26111C4.63838 4.27189 4.54301 4.311 4.46387 4.37389C4.38474 4.43679 4.32511 4.52087 4.29192 4.61635C4.25874 4.71183 4.25337 4.81477 4.27644 4.91319C4.2995 5.0116 4.35006 5.10144 4.42222 5.17222L7.24444 8L4.42222 10.8222C4.36765 10.8706 4.32358 10.9296 4.29273 10.9957C4.26187 11.0618 4.24489 11.1334 4.24283 11.2063C4.24077 11.2792 4.25367 11.3517 4.28075 11.4194C4.30782 11.4871 4.34849 11.5486 4.40024 11.5999C4.45198 11.6513 4.51371 11.6915 4.58161 11.7181C4.64952 11.7447 4.72214 11.757 4.79501 11.7544C4.86788 11.7518 4.93944 11.7343 5.00527 11.703C5.07111 11.6717 5.12982 11.6271 5.17778 11.5722L8 8.75L10.8222 11.5722C10.8702 11.6271 10.9289 11.6717 10.9947 11.703C11.0606 11.7343 11.1321 11.7518 11.205 11.7544C11.2779 11.757 11.3505 11.7447 11.4184 11.7181C11.4863 11.6915 11.548 11.6513 11.5998 11.5999C11.6515 11.5486 11.6922 11.4871 11.7193 11.4194C11.7463 11.3517 11.7592 11.2792 11.7572 11.2063C11.7551 11.1334 11.7381 11.0618 11.7073 10.9957C11.6764 10.9296 11.6323 10.8706 11.5778 10.8222L8.75556 8L11.5778 5.17222C11.6578 5.0942 11.7113 4.99302 11.7307 4.88297C11.7501 4.77291 11.7344 4.65954 11.6859 4.55886C11.6374 4.45817 11.5585 4.37527 11.4604 4.32184C11.3622 4.26842 11.2498 4.24718 11.1389 4.26111C11.018 4.27705 10.9063 4.33391 10.8222 4.42222L8 7.24444L5.17778 4.42222C5.12166 4.3638 5.05297 4.31893 4.97693 4.29102C4.90088 4.2631 4.81948 4.25288 4.73889 4.26111Z" fill="#797F88" />
@@ -70,7 +70,7 @@ const Section = () => {
                         </svg>
                         <span className='text-[#111827] text-sm font-bold'>Sort into Collection</span>
                     </div>
-                    <div className='flex gap-[30px]'>
+                    <div className='flex sm:flex-nowrap flex-wrap gap-4 sm:gap-[30px]'>
                         <div className='flex items-center gap-[10px] cursor-pointer'>
                             <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 14.1714C0 15.1726 0.844641 16 1.86667 16H19.1333C20.1554 16 21 15.1726 21 14.1714C21 10.8191 21 7.46668 21 4.11429C21 2.86096 19.9461 1.82857 18.6667 1.82857H10.1281C9.87157 1.3645 9.57195 0.861515 9.24583 0.549986C8.93046 0.254167 8.47283 0 7.93333 0H1.86667C0.844641 0 0 0.827415 0 1.82857M1.4 1.82857C1.4 1.56346 1.59602 1.37143 1.86667 1.37143H7.93333C8.04017 1.37143 8.13037 1.40622 8.27604 1.54286C9.01052 2.47261 9.5248 3.60101 10.1208 4.67143C10.2403 4.88576 10.4841 5.02789 10.7333 5.02857H19.1333C19.404 5.02857 19.6 5.22059 19.6 5.48571V14.1714C19.6 14.4365 19.404 14.6286 19.1333 14.6286H1.86667C1.59602 14.6286 1.4 14.4365 1.4 14.1714M10.8938 3.2H18.6667C18.9811 3.2 19.2898 3.40953 19.4615 3.68571C19.3542 3.66651 19.2457 3.65714 19.1333 3.65714H11.149L10.8938 3.2Z" fill="#111827" />
@@ -158,39 +158,170 @@ const Section = () => {
                         </div>
                     </div>
                 )}
-                <div className='grid grid-cols-5 gap-x-[10px] gap-y-[11px] grid-rows-1'>
-                    {images.map((item, index) => {
-                        return (
-                            <div key={index} className="z-[1000] relative">
-                                <div className="time-line-tags relative  overflow-hidden">
-                                    <Image className={`max-w-[304px] ${index === 0 ? 'min-h-[296px]' :
-                                        index === 1 ? ' row-span-7' :
-                                            index === 2 ? 'min-h-[202px]' :
-                                                index === 3 ? 'min-h-[150px] max-h-[150px]' :
-                                                    index === 4 ? 'min-h-[430px] max-h-[430px]' :
-                                                        ''}`} src={item.img} width={500} height={500} alt="time-line-image" />
-                                    <div className={` ${index === 0 ? 'bg-black' : ''} bg-opacity-30 absolute w-full h-full top-0`}></div>
-                                    <main className="bg-black inset-y-0 bg-opacity-40  flex justify-center items-center absolute w-full h-full">
-                                        <div className=''>
-                                            <p className='text-[#FFF] text-lg font-bold pb-[25px]  cursor-pointer'>{item.imgName}</p>
-                                            <div className=" cursor-pointer flex gap-1 py-1 max-w-[120px] px-2 mx-auto bg-white items-center justify-center">
-                                                <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
-                                                </svg>
-                                                <p className="text-[13px] text-[#111827] font-medium">View Images</p>
+                <div className=' grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-[10px]'>
+                    <div className=' columns-1'>
+                        {images.map((item, index) => {
+                            return (
+                                <div key={index} className="z-[1000] relative mb-[10px] max-w-[304px] sm:mx-0 mx-auto">
+                                    <div className="time-line-tags relative  overflow-hidden">
+                                        <Image className={`max-w-[304px] min-w-[304px] ${index === 0 ? 'min-h-[296px]' :
+                                            index === 1 ? ' min-h-[304px]' :
+                                                index === 2 ? 'min-h-[322px]' :
+                                                    ''}`} src={item.img} width={500} height={500} alt="time-line-image" />
+                                        <main className="bg-black inset-y-0 bg-opacity-40 max-w-[304px] flex justify-center items-center absolute w-full h-full">
+                                            <div className=''>
+                                                <p className='text-[#FFF] text-lg font-bold pb-[25px]  cursor-pointer'>{item.imgName}</p>
+                                                <div className=" cursor-pointer flex gap-1 py-1 max-w-[120px] px-2 mx-auto bg-white items-center justify-center">
+                                                    <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
+                                                    </svg>
+                                                    <p className="text-[13px] text-[#111827] font-medium">View Images</p>
+                                                </div>
                                             </div>
+                                        </main>
+                                        <div className=' absolute top-0 left-0 p-[7px]'>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="24" fill="white" />
+                                                <path d="M5 12.55L6.213 11.3978L9.685 14.6957L17.788 7L19 8.15217L9.686 17L5 12.55Z" fill="#32BA7C" />
+                                            </svg>
                                         </div>
-                                    </main>
-                                    <div className=' absolute top-0 left-0 p-[7px]'>
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="24" height="24" fill="white" />
-                                            <path d="M5 12.55L6.213 11.3978L9.685 14.6957L17.788 7L19 8.15217L9.686 17L5 12.55Z" fill="#32BA7C" />
-                                        </svg>
                                     </div>
                                 </div>
-                            </div>
-                        )
-                    })}
+                            )
+                        })}
+                    </div>
+                    <div className=' columns-1 gap-x-[10px]'>
+                        {images.map((item, index) => {
+                            return (
+                                <div key={index} className="z-[1000] relative mb-[10px] max-w-[304px] sm:mx-0 mx-auto">
+                                    <div className="time-line-tags relative  overflow-hidden">
+                                        <Image className={`2xl:max-w-[304px] ${index === 0 ? 'min-h-[456px]' :
+                                            index === 1 ? ' min-h-[456px]' :
+                                                index === 2 ? 'min-h-[202px]' :
+                                                    index === 3 ? 'min-h-[150px] max-h-[252px]' :
+                                                        index === 4 ? 'min-h-[430px] max-h-[430px]' :
+                                                            ''}`} src={item.img} width={500} height={500} alt="time-line-image" />
+                                        <main className="bg-black inset-y-0 bg-opacity-40  flex justify-center items-center absolute w-full h-full">
+                                            <div className=''>
+                                                <p className='text-[#FFF] text-lg font-bold pb-[25px]  cursor-pointer'>{item.imgName}</p>
+                                                <div className=" cursor-pointer flex gap-1 py-1 max-w-[120px] px-2 mx-auto bg-white items-center justify-center">
+                                                    <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
+                                                    </svg>
+                                                    <p className="text-[13px] text-[#111827] font-medium">View Images</p>
+                                                </div>
+                                            </div>
+                                        </main>
+                                        <div className=' absolute top-0 left-0 p-[7px]'>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="24" fill="white" />
+                                                <path d="M5 12.55L6.213 11.3978L9.685 14.6957L17.788 7L19 8.15217L9.686 17L5 12.55Z" fill="#32BA7C" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div className=' columns-1 gap-x-[10px]'>
+                        {images.map((item, index) => {
+                            return (
+                                <div key={index} className="z-[1000] relative mb-[10px] max-w-[304px] sm:mx-0 mx-auto">
+                                    <div className="time-line-tags relative  overflow-hidden">
+                                        <Image className={`2xl:max-w-[304px] ${index === 0 ? 'min-h-[202px]' :
+                                            index === 1 ? ' min-h-[304px]' :
+                                                index === 2 ? 'min-h-[250px]' :
+                                                    index === 3 ? 'min-h-[252px] max-h-[252px]' :
+                                                        index === 4 ? 'min-h-[430px] max-h-[430px]' :
+                                                            ''}`} src={item.img} width={500} height={500} alt="time-line-image" />
+                                        <main className="bg-black inset-y-0 bg-opacity-40  flex justify-center items-center absolute w-full h-full">
+                                            <div className=''>
+                                                <p className='text-[#FFF] text-lg font-bold pb-[25px]  cursor-pointer'>{item.imgName}</p>
+                                                <div className=" cursor-pointer flex gap-1 py-1 max-w-[120px] px-2 mx-auto bg-white items-center justify-center">
+                                                    <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
+                                                    </svg>
+                                                    <p className="text-[13px] text-[#111827] font-medium">View Images</p>
+                                                </div>
+                                            </div>
+                                        </main>
+                                        <div className=' absolute top-0 left-0 p-[7px]'>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="24" fill="white" />
+                                                <path d="M5 12.55L6.213 11.3978L9.685 14.6957L17.788 7L19 8.15217L9.686 17L5 12.55Z" fill="#32BA7C" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div className=' columns-1 gap-x-[10px]'>
+                        {images.map((item, index) => {
+                            return (
+                                <div key={index} className="z-[1000] relative mb-[10px] max-w-[304px] sm:mx-0 mx-auto">
+                                    <div className="time-line-tags relative  overflow-hidden">
+                                        <Image className={`2xl:max-w-[304px] ${index === 0 ? 'min-h-[150px]  max-h-[150px] ' :
+                                            index === 1 ? ' min-h-[456px]' :
+                                                index === 2 ? 'min-h-[274px]' :
+                                                    index === 3 ? 'min-h-[150px] max-h-[150px]' :
+                                                        index === 4 ? 'min-h-[430px] max-h-[430px]' :
+                                                            ''}`} src={item.img} width={500} height={500} alt="time-line-image" />
+                                        <main className="bg-black inset-y-0 bg-opacity-40  flex justify-center items-center absolute w-full h-full">
+                                            <div className=''>
+                                                <p className='text-[#FFF] text-lg font-bold pb-[25px]  cursor-pointer'>{item.imgName}</p>
+                                                <div className=" cursor-pointer flex gap-1 py-1 max-w-[120px] px-2 mx-auto bg-white items-center justify-center">
+                                                    <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
+                                                    </svg>
+                                                    <p className="text-[13px] text-[#111827] font-medium">View Images</p>
+                                                </div>
+                                            </div>
+                                        </main>
+                                        <div className=' absolute top-0 left-0 p-[7px]'>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="24" fill="white" />
+                                                <path d="M5 12.55L6.213 11.3978L9.685 14.6957L17.788 7L19 8.15217L9.686 17L5 12.55Z" fill="#32BA7C" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div className=' columns-1 gap-x-[10px]'>
+                        {images.map((item, index) => {
+                            return (
+                                <div key={index} className="z-[1000] relative mb-[10px] max-w-[304px] sm:mx-0 mx-auto">
+                                    <div className="time-line-tags relative  overflow-hidden">
+                                        <Image className={`2xl:max-w-[304px] ${index === 0 ? 'min-h-[430px]' :
+                                            index === 1 ? ' min-h-[171px]  max-h-[171px]' :
+                                                index === 2 ? 'min-h-[257px]' :
+                                                    index === 3 ? 'min-h-[150px] max-h-[150px]' :
+                                                        index === 4 ? 'min-h-[430px] max-h-[430px]' :
+                                                            ''}`} src={item.img} width={500} height={500} alt="time-line-image" />
+                                        <main className="bg-black inset-y-0 bg-opacity-40  flex justify-center items-center absolute w-full h-full">
+                                            <div className=''>
+                                                <p className='text-[#FFF] text-lg font-bold pb-[25px]  cursor-pointer'>{item.imgName}</p>
+                                                <div className=" cursor-pointer flex gap-1 py-1 max-w-[120px] px-2 mx-auto bg-white items-center justify-center">
+                                                    <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
+                                                    </svg>
+                                                    <p className="text-[13px] text-[#111827] font-medium">View Images</p>
+                                                </div>
+                                            </div>
+                                        </main>
+                                        <div className=' absolute top-0 left-0 p-[7px]'>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="24" fill="white" />
+                                                <path d="M5 12.55L6.213 11.3978L9.685 14.6957L17.788 7L19 8.15217L9.686 17L5 12.55Z" fill="#32BA7C" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         </section>
@@ -224,6 +355,9 @@ const images = [
         img: '/1.png',
         imgName: 'Collection Name Here'
     },
+
+]
+const images2 = [
     {
         img: '/1.png',
         imgName: 'Collection Name Here'
@@ -248,4 +382,86 @@ const images = [
         img: '/1.png',
         imgName: 'Collection Name Here'
     },
+
+]
+const images3 = [
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+
+]
+const images4 = [
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+
+]
+const images5 = [
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+    {
+        img: '/1.png',
+        imgName: 'Collection Name Here'
+    },
+
 ]

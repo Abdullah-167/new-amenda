@@ -7,7 +7,7 @@ const Main = () => {
             <div className='max-w-[1200px]'>
                 <h1 className=' text-[#111827] font-bold text-2xl pt-[25px] pb-[31px]'>Dashboard</h1>
                 <textarea className=' bg-[#F3F4F6] max-h-[250px] min-h-[250px] w-full outline-none max-w-[1168px] px-5 py-5 mb-[60px]'></textarea>
-                <div className=' grid grid-cols-2 gap-x-[48px] w-full max-w-[1168px]'>
+                <div className=' grid grid-cols-1 sm:grid-cols-2 gap-x-[48px] w-full max-w-[1168px]'>
                     {data.map((item, index) => {
                         return (
                             <div className='pb-[60px] gap-5' key={index}>

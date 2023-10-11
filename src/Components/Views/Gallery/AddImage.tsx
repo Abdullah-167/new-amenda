@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 
 interface ImageData {
     img: string;
-    checkedTrue: string;
-    checkedFalse: string;
-}
+    checkedTrue: string | React.ReactNode; // Modify the type to allow JSX elements
+    checkedFalse: string | React.ReactNode; // Modify the type to allow JSX elements
+  }
 
 interface CheckedImages {
     [index: number]: boolean;
@@ -32,7 +32,9 @@ const AddImage: React.FC = () => {
 
     const handleAddImages = () => {
         // Filter and add only the selected images to selectedImages
-        const newSelectedImages = imagesToAdd.filter((_, index) => checkedImages[index]);
+        const newSelectedImages: ImageData[] = imagesToAdd.filter(
+            (_, index: number) => checkedImages[index]
+        );
         setSelectedImages(newSelectedImages);
         setAddImages(false);
     };
@@ -41,10 +43,10 @@ const AddImage: React.FC = () => {
 
     return (
         <section>
-            <div>
+            <div className='max-w-[772px] mx-auto'>
                 {!isAnyImageSelected && (
                     <Image
-                        className='cursor-pointer'
+                        className='cursor-pointer mx-auto'
                         src={'/add.png'}
                         alt='add-image'
                         width={772}
@@ -52,7 +54,7 @@ const AddImage: React.FC = () => {
                         onClick={toggleAddImages}
                     />
                 )}
-                <div className='grid grid-cols-3 gap-5 max-w-[772px]'>
+                <div className='grid grid-cols-2 md:grid-cols-3 gap-5 max-w-[772px]'>
                     {selectedImages.map((item, index) => {
                         return (
                             <div key={index}>
