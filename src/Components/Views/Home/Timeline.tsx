@@ -38,7 +38,7 @@ const TimeLine = () => {
 
 
     return (
-        <div className="py-12">
+        <div className="py-12 pr-5">
             <div className=" mx-auto relative ">
                 <div className=" pb-10">
                     <div className=" flex 2xl:gap-0 gap-5 justify-between border-t border-t-[#E5E7EB] border-b border-b-[#E5E7EB] py-5 mb-5">
@@ -301,7 +301,7 @@ const resTimeline = [
     },
 ]
 
-export const DataA = [
+const DataA = [
     {
         id: 1,
         btnHeading: "Allgemeine Information ",

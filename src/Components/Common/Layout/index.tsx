@@ -25,7 +25,7 @@ const Layout = ({ children }: any) => {
                     <Sidebar />
                 </div>
             </div>
-            <div className=' md:pl-[300px] md:pr-10 md:px-0 px-5'>
+            <div className=' md:pl-[300px] md:px-0 px-5'>
                 {children}
             </div>
         </div>
