@@ -213,7 +213,9 @@ const TimeLine = () => {
                                             <div className={` pb-5 relative`}>
                                                 {item.data.map((newItem, idx) => {
                                                     return (
-                                                        <div className=" border-b border-b-[#E5E7EB] flex items-center 2xl:flex-nowrap flex-wrap justify-between pb-[30px] mb-[30px]">
+                                                        <div className=" border-b border-b-[#E5E7EB] flex items-center 2xl:flex-nowrap flex-wrap justify-between pb-[30px] mb-[30px]"
+                                                            key={idx}
+                                                        >
                                                             <div className="flex justify-between gap-10 items-center 2xl:mb-0 mb-5">
                                                                 <Image className=" object-cover" src={newItem.mainImg} width={100} height={100} alt="time-line-image" />
                                                                 <div>
