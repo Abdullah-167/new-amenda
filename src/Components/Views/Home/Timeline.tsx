@@ -29,7 +29,7 @@ const TimeLine = () => {
                 slides: { perView: 4, spacing: 5 },
             },
             "(min-width: 1500px)": {
-                slides: { perView: 6, spacing: 10 },
+                slides: { perView: 6,  },
             },
         },
         slides: { perView: 1, spacing: 5 },
@@ -1382,39 +1382,43 @@ const TimeLine = () => {
                                     <div className='border cursor-pointer text-[14px] max-h-[30px] border-[#111827] bg-[#111827] text-white py-[7px] px-[18px] flex justify-center items-center mb-2'>LP 6</div>
                                 </div>
                                 <div ref={ref} className={`keen-slider flex gap-5 overflow-x-auto  pb-5 relative`}>
-                                    {timeLine.map((newItem, idx) => {
-                                        return (
-                                            <div key={idx} className="keen-slider__slide z-[1000] relative">
-                                                <p className=" text-sm text-center font-bold mb-4">{newItem.month}</p>
-                                                <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] flex justify-center z-[100] items-center h-[32px] max-w-[32px] mx-auto mb-2">{newItem.number}</div>
-                                                <div className="w-[2px] h-[30px]  mx-auto z-[1000]  bg-black inset-x-0 mb-[20px]">{newItem.line}</div>
-                                                <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
-                                                    <p className="text-[14px] text-[#797F88]  text-center pb-[15px]">{newItem.newTimeLineText}</p>
-                                                    {newItem.images && (
-                                                        <div className="flex justify-center gap-2 mb-[15px]">
-                                                            {newItem.isImgOne && (
-                                                                <Image className=" object-cover" src={newItem.imgOne} width={56} height={56} alt="time-line-image" />
-                                                            )}
-                                                            {newItem.isImgTwo && (
-                                                                <Image className=" object-cover" src={newItem.imgTwo} width={56} height={56} alt="time-line-image" />
-                                                            )}
-                                                            {newItem.isImgThree && (
-                                                                <Image className=" object-cover" src={newItem.imgThree} width={56} height={56} alt="time-line-image" />
-                                                            )}
+                                    <div className=" absolute top-12 border-syl w-full h-1 "></div>
+                                    {
+                                        timeLine.map((newItem, idx) => {
+                                            return (
+                                                <div key={idx} className="keen-slider__slide z-[1000] relative">
+                                                    <div className=" absolute top-[45px] right-0 "> {newItem.arrow} </div>
+                                                    <p className=" text-sm text-center font-bold mb-4">{newItem.month}</p>
+                                                    <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] flex justify-center z-[100] items-center h-[32px] max-w-[32px] mx-auto mb-2">{newItem.number}</div>
+                                                    <div className="w-[2px] h-[30px]  mx-auto z-[1000]  bg-black inset-x-0 mb-[20px]">{newItem.line}</div>
+                                                    <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
+                                                        <p className="text-[14px] text-[#797F88]  text-center pb-[15px]">{newItem.newTimeLineText}</p>
+                                                        {newItem.images && (
+                                                            <div className="flex justify-center gap-2 mb-[15px]">
+                                                                {newItem.isImgOne && (
+                                                                    <Image className=" object-cover" src={newItem.imgOne} width={56} height={56} alt="time-line-image" />
+                                                                )}
+                                                                {newItem.isImgTwo && (
+                                                                    <Image className=" object-cover" src={newItem.imgTwo} width={56} height={56} alt="time-line-image" />
+                                                                )}
+                                                                {newItem.isImgThree && (
+                                                                    <Image className=" object-cover" src={newItem.imgThree} width={56} height={56} alt="time-line-image" />
+                                                                )}
+                                                            </div>
+                                                        )}
+                                                        <div className="flex gap-[5px] justify-center items-center cursor-pointer">
+                                                            <span className="text-[#2286E0] text-[13px]">{newItem.btn}</span>
+                                                            <span>
+                                                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M3.327 2.93465C3.32067 2.91365 3.31667 2.89199 3.30833 2.87199C3.28567 2.81766 3.27267 2.80832 3.23601 2.76366L0.568012 0.0953851C0.551014 0.0817187 0.535349 0.0660526 0.517352 0.0540528C0.37237 -0.0429449 0.153397 -0.00127923 0.0547431 0.146051C-0.0182477 0.255382 -0.0182477 0.407378 0.0547431 0.516709C0.0667416 0.534708 0.0824063 0.550375 0.0964046 0.567041L2.52843 2.99965L0.0964046 5.43193L0.0547431 5.4826C0.0444111 5.5016 0.0324126 5.51993 0.0240803 5.54026C-0.034579 5.68126 0.0174145 5.85859 0.146732 5.94525C0.256051 6.01825 0.408032 6.01825 0.517352 5.94525C0.535349 5.93292 0.551014 5.91759 0.568012 5.90359L3.23601 3.23531C3.24968 3.21865 3.26534 3.20298 3.27734 3.18498C3.30167 3.14832 3.31867 3.10765 3.327 3.06465C3.33566 3.02199 3.33133 2.97799 3.327 2.93465ZM5.995 2.93465C5.98866 2.91365 5.98433 2.89199 5.976 2.87199C5.95367 2.81766 5.94034 2.80832 5.90401 2.76366L3.23601 0.0953851C3.21901 0.0817187 3.20335 0.0660526 3.18535 0.0540528C3.05837 -0.0309452 2.87439 -0.0146124 2.7644 0.0953851C2.65608 0.203716 2.63742 0.388712 2.72274 0.516709C2.73474 0.534708 2.7504 0.550375 2.7644 0.567041L5.19643 2.99965L2.7644 5.43193L2.72274 5.4826C2.71241 5.5016 2.70041 5.51993 2.69208 5.54026C2.63342 5.68159 2.68708 5.85992 2.81473 5.94525C2.92405 6.01825 3.07603 6.01825 3.18535 5.94525C3.20335 5.93292 3.21901 5.91759 3.23601 5.90359L5.90401 3.23531C5.91767 3.21865 5.93334 3.20298 5.94534 3.18498C5.96967 3.14832 5.98666 3.10765 5.995 3.06465C6.00366 3.02199 5.99933 2.97799 5.995 2.93465Z" fill="#2286E0" />
+                                                                </svg>
+                                                            </span>
                                                         </div>
-                                                    )}
-                                                    <div className="flex gap-[5px] justify-center items-center cursor-pointer">
-                                                        <span className="text-[#2286E0] text-[13px]">{newItem.btn}</span>
-                                                        <span>
-                                                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M3.327 2.93465C3.32067 2.91365 3.31667 2.89199 3.30833 2.87199C3.28567 2.81766 3.27267 2.80832 3.23601 2.76366L0.568012 0.0953851C0.551014 0.0817187 0.535349 0.0660526 0.517352 0.0540528C0.37237 -0.0429449 0.153397 -0.00127923 0.0547431 0.146051C-0.0182477 0.255382 -0.0182477 0.407378 0.0547431 0.516709C0.0667416 0.534708 0.0824063 0.550375 0.0964046 0.567041L2.52843 2.99965L0.0964046 5.43193L0.0547431 5.4826C0.0444111 5.5016 0.0324126 5.51993 0.0240803 5.54026C-0.034579 5.68126 0.0174145 5.85859 0.146732 5.94525C0.256051 6.01825 0.408032 6.01825 0.517352 5.94525C0.535349 5.93292 0.551014 5.91759 0.568012 5.90359L3.23601 3.23531C3.24968 3.21865 3.26534 3.20298 3.27734 3.18498C3.30167 3.14832 3.31867 3.10765 3.327 3.06465C3.33566 3.02199 3.33133 2.97799 3.327 2.93465ZM5.995 2.93465C5.98866 2.91365 5.98433 2.89199 5.976 2.87199C5.95367 2.81766 5.94034 2.80832 5.90401 2.76366L3.23601 0.0953851C3.21901 0.0817187 3.20335 0.0660526 3.18535 0.0540528C3.05837 -0.0309452 2.87439 -0.0146124 2.7644 0.0953851C2.65608 0.203716 2.63742 0.388712 2.72274 0.516709C2.73474 0.534708 2.7504 0.550375 2.7644 0.567041L5.19643 2.99965L2.7644 5.43193L2.72274 5.4826C2.71241 5.5016 2.70041 5.51993 2.69208 5.54026C2.63342 5.68159 2.68708 5.85992 2.81473 5.94525C2.92405 6.01825 3.07603 6.01825 3.18535 5.94525C3.20335 5.93292 3.21901 5.91759 3.23601 5.90359L5.90401 3.23531C5.91767 3.21865 5.93334 3.20298 5.94534 3.18498C5.96967 3.14832 5.98666 3.10765 5.995 3.06465C6.00366 3.02199 5.99933 2.97799 5.995 2.93465Z" fill="#2286E0" />
-                                                            </svg>
-                                                        </span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        )
-                                    })}
+                                            )
+                                        })
+                                    }
                                     <div className="sm:hidden block">
                                         {resTimeline.map((item, index) => {
                                             return (
@@ -2503,7 +2507,12 @@ const timeLine = [
         isImgOne: true,
         isImgTwo: true,
         isImgThree: true,
-        images: false
+        images: false,
+        arrow: (
+            <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.56049 0.137764C1.35824 -0.0506909 1.04308 -0.0451302 0.847607 0.150342C0.652135 0.345814 0.646575 0.660979 0.83503 0.863225L6.3102 6.3384L0.83503 11.6219C0.646575 11.8242 0.652135 12.1394 0.847607 12.3348C1.04308 12.5303 1.35824 12.5359 1.56049 12.3474L7.66531 6.3384L1.56049 0.137764Z" fill="#CACCCF" />
+            </svg>
+        )
 
     },
     {
@@ -2519,7 +2528,13 @@ const timeLine = [
         isImgOne: true,
         isImgTwo: true,
         isImgThree: false,
-        images: true
+        images: true,
+        arrow: (
+            <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.56049 0.137764C1.35824 -0.0506909 1.04308 -0.0451302 0.847607 0.150342C0.652135 0.345814 0.646575 0.660979 0.83503 0.863225L6.3102 6.3384L0.83503 11.6219C0.646575 11.8242 0.652135 12.1394 0.847607 12.3348C1.04308 12.5303 1.35824 12.5359 1.56049 12.3474L7.66531 6.3384L1.56049 0.137764Z" fill="#CACCCF" />
+            </svg>
+        )
+
 
     },
     {
@@ -2535,7 +2550,12 @@ const timeLine = [
         isImgOne: true,
         isImgTwo: true,
         isImgThree: true,
-        images: false
+        images: false,
+        arrow: (
+            <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.56049 0.137764C1.35824 -0.0506909 1.04308 -0.0451302 0.847607 0.150342C0.652135 0.345814 0.646575 0.660979 0.83503 0.863225L6.3102 6.3384L0.83503 11.6219C0.646575 11.8242 0.652135 12.1394 0.847607 12.3348C1.04308 12.5303 1.35824 12.5359 1.56049 12.3474L7.66531 6.3384L1.56049 0.137764Z" fill="#CACCCF" />
+            </svg>
+        )
 
     },
     {
@@ -2551,7 +2571,13 @@ const timeLine = [
         isImgOne: true,
         isImgTwo: true,
         isImgThree: true,
-        images: true
+        images: true,
+            arrow: (
+            <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.56049 0.137764C1.35824 -0.0506909 1.04308 -0.0451302 0.847607 0.150342C0.652135 0.345814 0.646575 0.660979 0.83503 0.863225L6.3102 6.3384L0.83503 11.6219C0.646575 11.8242 0.652135 12.1394 0.847607 12.3348C1.04308 12.5303 1.35824 12.5359 1.56049 12.3474L7.66531 6.3384L1.56049 0.137764Z" fill="#CACCCF" />
+            </svg>
+        )
+
 
     },
     {
@@ -2567,7 +2593,12 @@ const timeLine = [
         isImgOne: true,
         isImgTwo: true,
         isImgThree: true,
-        images: false
+        images: false,
+        arrow: (
+            <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.56049 0.137764C1.35824 -0.0506909 1.04308 -0.0451302 0.847607 0.150342C0.652135 0.345814 0.646575 0.660979 0.83503 0.863225L6.3102 6.3384L0.83503 11.6219C0.646575 11.8242 0.652135 12.1394 0.847607 12.3348C1.04308 12.5303 1.35824 12.5359 1.56049 12.3474L7.66531 6.3384L1.56049 0.137764Z" fill="#CACCCF" />
+            </svg>
+        )
 
     },
     {
@@ -2583,7 +2614,12 @@ const timeLine = [
         isImgOne: true,
         isImgTwo: true,
         isImgThree: true,
-        images: false
+        images: false,
+        arrow: (
+            <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.56049 0.137764C1.35824 -0.0506909 1.04308 -0.0451302 0.847607 0.150342C0.652135 0.345814 0.646575 0.660979 0.83503 0.863225L6.3102 6.3384L0.83503 11.6219C0.646575 11.8242 0.652135 12.1394 0.847607 12.3348C1.04308 12.5303 1.35824 12.5359 1.56049 12.3474L7.66531 6.3384L1.56049 0.137764Z" fill="#CACCCF" />
+            </svg>
+        )
 
     },
 ]
