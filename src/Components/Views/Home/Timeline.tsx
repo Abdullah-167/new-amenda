@@ -149,13 +149,11 @@ const TimeLine = () => {
                                         )}
                                         {activeTab === item.id && text === 1 && (
                                             <div className={` grid grid-cols-2 xl:grid-cols-4 gap-5 pb-5 relative`}>
-                                                <div className=" absolute top-12 border-syl w-full h-1 "></div>
                                                 {item.data.map((newItem, idx) => {
                                                     return (
                                                         <div key={idx} className="z-[1000] relative">
                                                             <div className="time-line-tags relative max-w-[376px] max-h-[376px] overflow-hidden">
                                                                 <Image className=" object-cover" src={newItem.mainImg} width={376} height={376} alt="time-line-image" />
-                                                                <div className={` ${idx === 0 ? 'bg-black' : ''} bg-opacity-30 absolute w-full h-full top-0`}></div>
                                                                 <section className={` absolute w-full bottom-0 pb-1 px-1`}>
                                                                     {newItem.isImgname && (
                                                                         <p className="text-sm text-white pb-2">{newItem.imgName}</p>
