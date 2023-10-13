@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Details = ({ profileName }: any) => {
 
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeTab, setActiveTab] = useState(1);
 
     const handleTab = (index: any) => {
         setActiveTab(index)
