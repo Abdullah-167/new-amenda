@@ -142,9 +142,9 @@ const SideBar = () => {
                                     <div className='flex flex-col justify-start w-full'>
                                         {item.detail.map((newItem, idx) => {
                                             return (
-                                                <div className={` px-[15px] transition-all duration-300 ${groupTab === index ? 'bg-[#F3F4F6] bg-opacity-50 h-full py-[13px] mb-[15px]' : ''}`}>
+                                                <div className={` px-[15px] transition-all duration-300 ${groupTab === index ? 'bg-[#F3F4F6] bg-opacity-50 h-full py-[13px] mb-[15px]' : ''}`} key={idx}>
                                                     <div className='flex justify-between cursor-pointer overflow-hidden' onClick={() => handleGroupTab(index)}>
-                                                        <div className='flex gap-3 items-center mb-[26px]' key={idx}>
+                                                        <div className='flex gap-3 items-center mb-[26px]'>
                                                             <Image src={newItem.img} alt={'btn-arrow'} width={40} height={40} />
                                                             <div>
                                                                 <p className='text-sm text-[#111827] font-bold pb-[6px]'>{newItem.name}</p>

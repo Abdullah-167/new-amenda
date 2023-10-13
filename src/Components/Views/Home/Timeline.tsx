@@ -547,13 +547,13 @@ const TimeLine = () => {
                             <div>
                                 {tabThreeData.map((item, index) => {
                                     return (
-                                        <div>
+                                        <div key={index}>
                                             <h1>{item.mainHeading}</h1>
                                             <div>
                                                 {item.data.map((newItem, idx) => {
                                                     return (
-                                                        <div>
-                                                            
+                                                        <div key={idx}>
+
                                                         </div>
                                                     )
                                                 })}
@@ -563,7 +563,7 @@ const TimeLine = () => {
                                 })}
                             </div>
                         )}
-                        
+
                         {newActiveTab === 4 && (
                             <div>
                                 {DataD.map((item, index) => {
