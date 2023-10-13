@@ -83,3 +83,14 @@ body {
   scrollbar-color: #555 #eee;
 }
 
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+.tab-scroll {
+  scrollbar-width: none;
+}
+
+/* Chrome, Edge, and Safari */
+.tab-scroll::-webkit-scrollbar {
+  width: 0;
+}
