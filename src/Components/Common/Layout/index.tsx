@@ -9,7 +9,6 @@ const Layout = ({ children }: any) => {
 
     const [toggelTab, settoggelTab] = useState(false);
 
-
     const handleTab = () => {
         settoggelTab(!toggelTab)
     }
