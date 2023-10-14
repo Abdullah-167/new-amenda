@@ -19,6 +19,13 @@ const Section = () => {
     const [activeTab, setactiveTab] = useState(1);
     const [createdCollection, setcreatedCollection] = useState(false);
 
+    const [inputValue, setInputValue] = useState('');
+
+    const handleInputChange = (e: any) => {
+        setInputValue(e.target.value);
+    };
+
+
     const handleNewCollection = () => {
         setcreatedCollection(!createdCollection)
     }
@@ -274,15 +281,18 @@ const Section = () => {
                                 <h2 className=' text-2xl text-[#111827] pb-[30px] font-bold text-center'>Create New Collection</h2>
                                 <div className='pb-[20px]'>
                                     <label className='text-[#797F88] text-sm pb-[12px] block'>Collection Name</label>
-                                    <input className='bg-[#F3F4F6]  outline-none py-[12px] px-2 w-full' type="text" />
+                                    <input className='bg-[#F3F4F6]  outline-none py-[12px] px-2 w-full' type="text" value={inputValue}
+                                        onChange={handleInputChange} />
                                 </div>
                                 <div className='pb-[20px]'>
                                     <label className='text-[#797F88] text-sm pb-[12px] block'>Collection Name</label>
-                                    <input className='bg-[#F3F4F6]  outline-none py-[12px] px-2 w-full' type="text" />
+                                    <input className='bg-[#F3F4F6]  outline-none py-[12px] px-2 w-full' type="text" value={inputValue}
+                                        onChange={handleInputChange} />
                                 </div>
                                 <div className='pb-[20px]'>
                                     <label className='text-[#797F88] text-sm pb-[12px] block'>Description</label>
-                                    <textarea className='bg-[#F3F4F6]  outline-none py-[10px] px-2 min-h-[130px] w-full' />
+                                    <textarea className='bg-[#F3F4F6]  outline-none py-[10px] px-2 min-h-[130px] w-full' value={inputValue}
+                                        onChange={handleInputChange} />
                                 </div>
                                 <div className='flex justify-between items-center'>
                                     <div className='flex gap-1'>
@@ -294,7 +304,10 @@ const Section = () => {
                                         </sup>
                                     </div>
                                     <label className="relative inline-flex items-center mb-5 cursor-pointer">
-                                        <input type="checkbox" value="" className="sr-only peer" />
+                                        <input type="checkbox" className="sr-only peer"
+                                            value={inputValue}
+                                            onChange={handleInputChange}
+                                        />
                                         <div className="w-9 h-5 bg-[#FFF] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-[#E5E7EB] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-[#E5E7EB]"></div>
                                     </label>
                                 </div>
@@ -329,7 +342,12 @@ const Section = () => {
                                             <div className="w-9 h-5 bg-[#FFF] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-[#E5E7EB] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-[#E5E7EB]"></div>
                                         </label>
                                     </div>
-                                    <input className='bg-[#F3F4F6]  outline-none py-[12px] px-2 w-full' type="text" />
+                                    <input
+                                        className='bg-[#F3F4F6] outline-none py-[12px] px-2 w-full'
+                                        type="text"
+                                        value={inputValue}
+                                        onChange={handleInputChange}
+                                    />
                                 </div>
                                 <div className='mb-5'>
                                     {data.map((item, index) => {
@@ -364,9 +382,21 @@ const Section = () => {
                                         )
                                     })}
                                 </div>
-                                <div className='flex text-white text-center justify-center py-[11px] px-[20px] cursor-pointer bg-[#111827] ' onClick={toggelCollection}>
-                                    <span>Creat New Collection</span>
-                                </div>
+                                {!inputValue && (
+                                    <div className='flex text-white text-center justify-center py-[11px] px-[20px] cursor-pointer bg-[#111827] '>
+                                        <span>Creat New Collection</span>
+                                    </div>
+                                )}
+                                {inputValue && (
+                                    <div className='flex gap-[10px] justify-center'>
+                                        <div className='flex text-white text-center justify-center py-[11px] px-[20px] cursor-pointer bg-[#C83F3F] '>
+                                            <span>Creat New Collection</span>
+                                        </div>
+                                        <div className='flex text-white text-center justify-center py-[11px] px-[20px] cursor-pointer bg-[#111827] '>
+                                            <span>Creat New Collection</span>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
