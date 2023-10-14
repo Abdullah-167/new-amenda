@@ -5,7 +5,7 @@ interface ImageData {
     img: string;
     checkedTrue: string | React.ReactNode; // Modify the type to allow JSX elements
     checkedFalse: string | React.ReactNode; // Modify the type to allow JSX elements
-  }
+}
 
 interface CheckedImages {
     [index: number]: boolean;
@@ -31,7 +31,7 @@ const AddImage: React.FC = () => {
     };
 
     const handleAddImages = () => {
-        // Filter and add only the selected images to selectedImages
+
         const newSelectedImages: ImageData[] = imagesToAdd.filter(
             (_, index: number) => checkedImages[index]
         );

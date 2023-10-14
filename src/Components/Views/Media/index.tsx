@@ -1,8 +1,14 @@
 import React from 'react'
+import Details from './Details'
+import Layout from '@/Components/Common/Layout'
 
 const Media = () => {
   return (
-    <div>Media</div>
+    <Layout>
+      <div className='sm:pr-[50px]'>
+        <Details />
+      </div>
+    </Layout>
   )
 }
 

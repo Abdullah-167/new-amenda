@@ -23,16 +23,9 @@ body {
   font-family: 'SF Pro Display';
 }
 
-
-@font-face {
-  font-family: SF Pro Display;
-  src: url(../../src/Fonts/SF-Pro-Display-Medium.woff);
-}
-
 .time-line-tags-btn {
   background: rgba(243, 244, 246, 0.30);
 }
-
 
 .time-line-tags:hover section {
   display: none;
@@ -101,4 +94,9 @@ body {
 /* Chrome, Edge, and Safari */
 .tab-scroll::-webkit-scrollbar {
   width: 0;
+}
+
+
+.parent-bg {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.00) 0%, #111827 100%);
 }
