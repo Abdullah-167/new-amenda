@@ -15,6 +15,25 @@ const Section = () => {
     const [checkedImages3, setCheckedImages3] = useState<CheckedImages>({});
     const [checkedImages4, setCheckedImages4] = useState<CheckedImages>({});
     const [checkedImages5, setCheckedImages5] = useState<CheckedImages>({});
+    const [checkedRadio, setCheckedRadio] = useState<CheckedImages>({});
+    const [activeTab, setactiveTab] = useState(1);
+    const [createdCollection, setcreatedCollection] = useState(false);
+
+    const handleNewCollection = () => {
+        setcreatedCollection(!createdCollection)
+    }
+
+
+    const handleTab = (index: any) => {
+        setactiveTab(index)
+    }
+
+    const handleCheckedRadio = (index: any) => {
+        setCheckedRadio((prevState) => ({
+            ...prevState,
+            [index]: !prevState[index],
+        }));
+    };
 
     const handleChecked = (index: any) => {
         setCheckedImages((prevState) => ({
@@ -61,14 +80,6 @@ const Section = () => {
         setHandleCollection(!handleCollection)
         setHandleModale(false)
     }
-
-    useEffect(() => {
-        if (handleCollection) {
-            document.body.classList.add('modal-open');
-        } else {
-            document.body.classList.remove('modal-open');
-        }
-    }, [handleCollection]);
 
     return (
         <section>
@@ -135,7 +146,7 @@ const Section = () => {
                                 <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M7.46666 13.5333V12.6C7.46666 12.3424 7.25759 12.1333 7 12.1333C6.74241 12.1333 6.53334 12.3424 6.53334 12.6V13.5333C6.53334 13.7909 6.74241 14 7 14C7.25759 14 7.46666 13.7909 7.46666 13.5333ZM6.13155 0.500733L4.37459 3.5868L0.808402 4.25927C0.45141 4.32647 0.162549 4.5794 0.0500851 4.91587C-0.0642457 5.25793 0.0202191 5.6336 0.272214 5.8968L2.74409 8.4714L2.30124 11.9639C2.25597 12.32 2.4109 12.6723 2.70909 12.8828C2.99935 13.0881 3.38108 13.1241 3.70587 12.9766L7 11.4814L10.2941 12.9766C10.6189 13.1241 11.0006 13.0881 11.2909 12.8828C11.5891 12.6723 11.744 12.32 11.6988 11.9639L11.2559 8.4714L13.7278 5.8968C13.9798 5.6336 14.0642 5.25793 13.9499 4.91587C13.8375 4.5794 13.5486 4.32647 13.1916 4.25927L9.62541 3.5868L7.86845 0.500733C7.69299 0.1932 7.36166 0 7 0C6.63834 0 6.30702 0.1932 6.13155 0.500733ZM1.19153 8.6828L0.258214 9.14947C0.0276856 9.26427 -0.0656457 9.5452 0.0496184 9.77527C0.164416 10.0058 0.445343 10.0991 0.675405 9.98387L1.60872 9.5172C1.83925 9.4024 1.93258 9.12147 1.81731 8.8914C1.70252 8.66087 1.42159 8.56753 1.19153 8.6828ZM12.3913 9.5172L13.3246 9.98387C13.5547 10.0991 13.8356 10.0058 13.9504 9.77527C14.0656 9.5452 13.9723 9.26427 13.7418 9.14947L12.8085 8.6828C12.5784 8.56753 12.2975 8.66087 12.1827 8.8914C12.0674 9.12147 12.1608 9.4024 12.3913 9.5172ZM3.83 2.23673L2.99329 1.4C2.81129 1.218 2.51543 1.218 2.33344 1.4C2.15144 1.582 2.15144 1.87787 2.33344 2.05987L3.17015 2.8966C3.35215 3.0786 3.64801 3.0786 3.83 2.8966C4.012 2.7146 4.012 2.41873 3.83 2.23673ZM10.8299 2.8966L11.6666 2.05987C11.8486 1.87787 11.8486 1.582 11.6666 1.4C11.4846 1.218 11.1887 1.218 11.0067 1.4L10.17 2.23673C9.988 2.41873 9.988 2.7146 10.17 2.8966C10.352 3.0786 10.6479 3.0786 10.8299 2.8966Z" fill="#797F88" />
                             </svg>
                         </div>
-                        <div className='flex text-white justify-between py-[11px] px-[20px] cursor-pointer bg-[#111827] '>
+                        <div className='flex text-white justify-between py-[11px] px-[20px] cursor-pointer bg-[#111827] ' onClick={toggelCollection}>
                             <span>Creat New Collection</span>
                             <span>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -183,7 +194,7 @@ const Section = () => {
                                 <path d="M5.5 2C5.22386 2 5 1.77614 5 1.5C5 1.22386 5.22386 1 5.5 1H18.5C18.7761 1 19 1.22386 19 1.5C19 1.77614 18.7761 2 18.5 2H5.5ZM5.5 7C5.22386 7 5 6.77614 5 6.5C5 6.22386 5.22386 6 5.5 6H18.5C18.7761 6 19 6.22386 19 6.5C19 6.77614 18.7761 7 18.5 7H5.5ZM5.5 12C5.22386 12 5 11.7761 5 11.5C5 11.2239 5.22386 11 5.5 11H18.5C18.7761 11 19 11.2239 19 11.5C19 11.7761 18.7761 12 18.5 12H5.5ZM0 1.5C0 0.671589 0.671126 0 1.5 0C2.32887 0 3 0.671589 3 1.5C3 2.32841 2.32887 3 1.5 3C0.671126 3 0 2.32841 0 1.5ZM1 1.5C1 1.77628 1.22357 2 1.5 2C1.77643 2 2 1.77628 2 1.5C2 1.22372 1.77643 1 1.5 1C1.22357 1 1 1.22372 1 1.5ZM0 6.5C0 5.67159 0.671126 5 1.5 5C2.32887 5 3 5.67159 3 6.5C3 7.32841 2.32887 8 1.5 8C0.671126 8 0 7.32841 0 6.5ZM1 6.5C1 6.77628 1.22357 7 1.5 7C1.77643 7 2 6.77628 2 6.5C2 6.22372 1.77643 6 1.5 6C1.22357 6 1 6.22372 1 6.5ZM0 11.5C0 10.6716 0.671126 10 1.5 10C2.32887 10 3 10.6716 3 11.5C3 12.3284 2.32887 13 1.5 13C0.671126 13 0 12.3284 0 11.5ZM1 11.5C1 11.7763 1.22357 12 1.5 12C1.77643 12 2 11.7763 2 11.5C2 11.2237 1.77643 11 1.5 11C1.22357 11 1 11.2237 1 11.5Z" fill="#797F88" />
                             </svg>
                         </div>
-                        <div className='flex text-white justify-between gap-[20px] items-center py-[11px] px-[20px] cursor-pointer bg-[#111827] ' onClick={toggelCollection}>
+                        <div className='flex text-white justify-between gap-[20px] items-center py-[11px] px-[20px] cursor-pointer bg-[#111827] ' onClick={handleNewCollection}>
                             <span>Add new Images</span>
                             <span>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -197,7 +208,7 @@ const Section = () => {
 
                 </div>
                 <div className=' relative max-h-[300px] mb-10'>
-                    <Image className={` transition-all duration-300 w-full min-h-[300px]`} src={'/building.png'} alt={'btn-arrow'} width={1000} height={1000} />
+                    <Image className={` transition-all duration-300 w-full min-h-[300px] max-h-[300px]`} src={'/building.png'} alt={'btn-arrow'} width={1000} height={1000} />
                     <div className='parent-bg w-full h-full absolute top-0'></div>
                     <p className=' absolute bottom-[25px] left-[25px] max-w-[762px] text-[#FFF] text-sm leading-6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                 </div>
@@ -212,7 +223,59 @@ const Section = () => {
                                 </svg>
                             </div>
                             <div className='pt-[40px]'>
+                                <h2 className=' text-2xl text-[#111827] pb-[30px] font-bold text-center'>Sort into Collection</h2>
+                                <div className='flex mb-[30px] border-b border-b-[#E5E7EB] justify-between'>
+                                    <p className={` text-xs font-bold pb-[10px] uppercase cursor-pointer border-b px-[20px] 2xl:px-[20px] ${activeTab === 1 ? 'text-[#111827] border-b-[#111827]' : 'text-[#797F88] border-b-[#E5E7EB]'}`} onClick={() => handleTab(1)}>Existing Collection</p>
+                                    <p className={` text-xs font-bold pb-[10px] uppercase cursor-pointer border-b px-[20px] 2xl:px-[20px] ${activeTab === 2 ? 'text-[#111827] border-b-[#111827]' : 'text-[#797F88] border-b-[#E5E7EB]'}`} onClick={() => handleTab(2)}>New Collection</p>
+                                </div>
+                                {sortCol.map((item, index) => {
+                                    const isCheckedRadio = checkedRadio[index] || false;
+                                    return (
+                                        <div className=' flex items-center gap-3 cursor-pointer mb-[10px] border border-[#E5E7EB] p-[15px]' key={index} onClick={() => handleCheckedRadio(index)}>
+                                            {isCheckedRadio ? (
+                                                <div className='max-w-[20px] max-h-[20px] relative cursor-pointer'>
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="10" cy="10" r="9.5" fill="#F3F4F6" stroke="#E5E7EB" />
+                                                    </svg>
+                                                    <div className=' absolute inset-0 flex items-center justify-center'>
+                                                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="4" cy="4" r="4" fill="#111827" />
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="10" cy="10" r="9.5" fill="#F3F4F6" stroke="#E5E7EB" />
+                                                </svg>
+                                            )}
+                                            <p className='text-base text-[#111827] font-bold'>{item.heading}</p>
+                                        </div>
+                                    )
+                                })}
+                                <div className='flex text-white text-center justify-center py-[11px] px-[20px] cursor-pointer bg-[#111827] ' onClick={toggelCollection}>
+                                    <span>Creat New Collection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {createdCollection && (
+                    <div className='fixed bg-opacity-50 flex justify-center items-center inset-0 pt-5 bg-black mx-auto z-[4000] '>
+                        <div className=' relative bg-[white] px-[50px] pb-[50px] max-w-[500px]  mx-auto'>
+                            <div className=' absolute right-[10px] flex justify-end px-[10px] py-[10px]'>
+                                <svg className=' cursor-pointer' width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={handleNewCollection}>
+                                    <g opacity="0.5">
+                                        <path d="M7.5 22.5L22.5 7.5M7.5 7.5L22.5 22.5" stroke="#797F88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div className='pt-[40px]'>
                                 <h2 className=' text-2xl text-[#111827] pb-[30px] font-bold text-center'>Create New Collection</h2>
+                                <div className='pb-[20px]'>
+                                    <label className='text-[#797F88] text-sm pb-[12px] block'>Collection Name</label>
+                                    <input className='bg-[#F3F4F6]  outline-none py-[12px] px-2 w-full' type="text" />
+                                </div>
                                 <div className='pb-[20px]'>
                                     <label className='text-[#797F88] text-sm pb-[12px] block'>Collection Name</label>
                                     <input className='bg-[#F3F4F6]  outline-none py-[12px] px-2 w-full' type="text" />
@@ -221,13 +284,19 @@ const Section = () => {
                                     <label className='text-[#797F88] text-sm pb-[12px] block'>Description</label>
                                     <textarea className='bg-[#F3F4F6]  outline-none py-[10px] px-2 min-h-[130px] w-full' />
                                 </div>
-                                <div className='flex gap-1'>
-                                    <p className='text-[#797F88] text-sm pb-[12px] block'>Auto Create from Tags</p>
-                                    <sup className='pt-2'>
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M5 0C4.0111 0 3.0444 0.293245 2.22215 0.842652C1.39991 1.39206 0.759043 2.17295 0.380605 3.08658C0.00216641 4.00021 -0.0968502 5.00555 0.0960758 5.97545C0.289002 6.94536 0.765206 7.83627 1.46447 8.53553C2.16373 9.23479 3.05465 9.711 4.02455 9.90392C4.99445 10.0969 5.99979 9.99783 6.91342 9.6194C7.82705 9.24096 8.60794 8.60009 9.15735 7.77785C9.70676 6.9556 10 5.98891 10 5C10 3.67392 9.47322 2.40215 8.53553 1.46447C7.59785 0.526784 6.32608 0 5 0ZM5.86 7.579C5.83811 7.60674 5.81215 7.63101 5.783 7.651C5.38117 7.93812 4.90084 8.09485 4.407 8.1C3.955 8.1 3.707 7.785 3.807 7.345C3.933 6.817 4.064 6.291 4.192 5.764C4.20993 5.71757 4.21855 5.66806 4.21734 5.6183C4.21614 5.56854 4.20515 5.51951 4.185 5.474C4.14631 5.41154 4.08736 5.36424 4.018 5.34C3.97942 5.32931 3.93991 5.32227 3.9 5.319C3.852 5.308 3.781 5.3 3.746 5.247L3.735 5.23C3.72258 5.21194 3.71394 5.19157 3.70957 5.17009C3.70521 5.14861 3.70522 5.12648 3.70961 5.10501C3.714 5.08354 3.72267 5.06317 3.73511 5.04513C3.74755 5.02709 3.7635 5.01174 3.782 5L3.873 4.94L4.008 4.865C4.08834 4.82301 4.17116 4.78594 4.256 4.754C4.42928 4.68548 4.60878 4.63391 4.792 4.6C4.90273 4.58028 5.01464 4.56792 5.127 4.563C5.2178 4.56262 5.30836 4.57235 5.397 4.592C5.722 4.67 5.885 4.959 5.797 5.311C5.672 5.843 5.539 6.373 5.409 6.9C5.347 7.152 5.409 7.262 5.663 7.33C5.701 7.34 5.74 7.347 5.779 7.356C5.91 7.39 5.941 7.472 5.86 7.579ZM5.433 3.607C5.26385 3.6062 5.09874 3.55517 4.95862 3.46041C4.8185 3.36564 4.70968 3.23139 4.64596 3.07469C4.58224 2.918 4.5665 2.7459 4.60072 2.58024C4.63494 2.41458 4.71759 2.26282 4.83818 2.14419C4.95877 2.02557 5.11188 1.94543 5.27808 1.91394C5.44428 1.88245 5.61609 1.90102 5.77171 1.96731C5.92734 2.0336 6.05978 2.14461 6.15223 2.28627C6.24468 2.42793 6.29298 2.59385 6.291 2.763C6.28784 2.98829 6.19599 3.20324 6.03537 3.36124C5.87475 3.51924 5.65831 3.60755 5.433 3.607Z" fill="#797F88" />
-                                        </svg>
-                                    </sup>
+                                <div className='flex justify-between items-center'>
+                                    <div className='flex gap-1'>
+                                        <p className='text-[#797F88] text-sm pb-[12px] block'>Auto Create from Tags</p>
+                                        <sup className='pt-2'>
+                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5 0C4.0111 0 3.0444 0.293245 2.22215 0.842652C1.39991 1.39206 0.759043 2.17295 0.380605 3.08658C0.00216641 4.00021 -0.0968502 5.00555 0.0960758 5.97545C0.289002 6.94536 0.765206 7.83627 1.46447 8.53553C2.16373 9.23479 3.05465 9.711 4.02455 9.90392C4.99445 10.0969 5.99979 9.99783 6.91342 9.6194C7.82705 9.24096 8.60794 8.60009 9.15735 7.77785C9.70676 6.9556 10 5.98891 10 5C10 3.67392 9.47322 2.40215 8.53553 1.46447C7.59785 0.526784 6.32608 0 5 0ZM5.86 7.579C5.83811 7.60674 5.81215 7.63101 5.783 7.651C5.38117 7.93812 4.90084 8.09485 4.407 8.1C3.955 8.1 3.707 7.785 3.807 7.345C3.933 6.817 4.064 6.291 4.192 5.764C4.20993 5.71757 4.21855 5.66806 4.21734 5.6183C4.21614 5.56854 4.20515 5.51951 4.185 5.474C4.14631 5.41154 4.08736 5.36424 4.018 5.34C3.97942 5.32931 3.93991 5.32227 3.9 5.319C3.852 5.308 3.781 5.3 3.746 5.247L3.735 5.23C3.72258 5.21194 3.71394 5.19157 3.70957 5.17009C3.70521 5.14861 3.70522 5.12648 3.70961 5.10501C3.714 5.08354 3.72267 5.06317 3.73511 5.04513C3.74755 5.02709 3.7635 5.01174 3.782 5L3.873 4.94L4.008 4.865C4.08834 4.82301 4.17116 4.78594 4.256 4.754C4.42928 4.68548 4.60878 4.63391 4.792 4.6C4.90273 4.58028 5.01464 4.56792 5.127 4.563C5.2178 4.56262 5.30836 4.57235 5.397 4.592C5.722 4.67 5.885 4.959 5.797 5.311C5.672 5.843 5.539 6.373 5.409 6.9C5.347 7.152 5.409 7.262 5.663 7.33C5.701 7.34 5.74 7.347 5.779 7.356C5.91 7.39 5.941 7.472 5.86 7.579ZM5.433 3.607C5.26385 3.6062 5.09874 3.55517 4.95862 3.46041C4.8185 3.36564 4.70968 3.23139 4.64596 3.07469C4.58224 2.918 4.5665 2.7459 4.60072 2.58024C4.63494 2.41458 4.71759 2.26282 4.83818 2.14419C4.95877 2.02557 5.11188 1.94543 5.27808 1.91394C5.44428 1.88245 5.61609 1.90102 5.77171 1.96731C5.92734 2.0336 6.05978 2.14461 6.15223 2.28627C6.24468 2.42793 6.29298 2.59385 6.291 2.763C6.28784 2.98829 6.19599 3.20324 6.03537 3.36124C5.87475 3.51924 5.65831 3.60755 5.433 3.607Z" fill="#797F88" />
+                                            </svg>
+                                        </sup>
+                                    </div>
+                                    <label className="relative inline-flex items-center mb-5 cursor-pointer">
+                                        <input type="checkbox" value="" className="sr-only peer" />
+                                        <div className="w-9 h-5 bg-[#FFF] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-[#E5E7EB] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-[#E5E7EB]"></div>
+                                    </label>
                                 </div>
                                 <div className='bg-[#F3F4F6] py-[9px] px-[10px] mb-[20px]'>
                                     <div className='flex gap-2 items-center  '>
@@ -252,16 +321,48 @@ const Section = () => {
                                         <p className='text-[#797F88] text-sm block cursor-pointer'>Add A Tag</p>
                                     </div>
                                 </div>
-                                <p className='text-[#797F88] text-sm block cursor-pointer pb-3'>Share with</p>
-                                <div className='flex gap-2 items-center bg-[#F3F4F6] py-[9px] px-[10px] mb-[30px]'>
-                                    <div className='flex gap-2 items-center bg-[#fff] px-2 py-[5px] cursor-pointer'>
-                                        <Image src={'/vin.svg'} alt='' width={26} height={26} />
-                                        <p className='text-[#797F88] text-sm block'>buildings</p>
-                                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.5 6.5L6.5 1.5M1.5 1.5L6.5 6.5" stroke="#797F88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
+                                <div className='pb-[20px]'>
+                                    <div className='flex justify-between  pb-[10px]'>
+                                        <label className='text-[#797F88] text-sm block'>Share With</label>
+                                        <label className="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" className="sr-only peer" />
+                                            <div className="w-9 h-5 bg-[#FFF] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-[#E5E7EB] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-[#E5E7EB]"></div>
+                                        </label>
                                     </div>
-                                    <p className='text-[#797F88] text-sm block cursor-pointer'>Add more</p>
+                                    <input className='bg-[#F3F4F6]  outline-none py-[12px] px-2 w-full' type="text" />
+                                </div>
+                                <div className='mb-5'>
+                                    {data.map((item, index) => {
+                                        return (
+                                            <div className='border border-[#E5E7EB] pl-[5px] w-full  pr-[15px] py-[5px] flex justify-between items-center max-w-[400px] min-w-[400px] mb-[5px]' key={index}>
+                                                <div className='flex gap-[15px] max-w-[212px] cursor-pointer min-w-[212px] items-center '>
+                                                    <Image className='min-w-[50px] min-h-[50px] max-h-[50px]' src={item.img} alt='' width={53} height={53} />
+                                                    <div className="">
+                                                        <h2 className="text-[#111827] text-sm pb-[3px]">{item.name}</h2>
+                                                        <p className="text-[#797F88] text-[13px]">{item.company}</p>
+                                                    </div>
+                                                </div>
+                                                <div className='flex items-center gap-[17px]'>
+                                                    <div className='flex items-center gap-[5px]'>
+                                                        <p>{item.owner}</p>
+                                                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_1_424)">
+                                                                <path d="M3.99998 6.28013C3.8566 6.28013 3.71324 6.22539 3.60393 6.11613L0.164113 2.67628C-0.0547044 2.45746 -0.0547044 2.10269 0.164113 1.88396C0.382842 1.66523 0.737546 1.66523 0.956381 1.88396L3.99998 4.92773L7.04359 1.88406C7.26241 1.66533 7.61708 1.66533 7.83579 1.88406C8.05471 2.10279 8.05471 2.45757 7.83579 2.67638L4.39602 6.11624C4.28666 6.22551 4.1433 6.28013 3.99998 6.28013Z" fill="#797F88" />
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_1_424">
+                                                                    <rect width="8" height="8" fill="white" />
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                    </div>
+                                                    <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M15.7857 0H1.21429C0.892237 0 0.583379 0.126428 0.355656 0.351472C0.127933 0.576515 0 0.88174 0 1.2V10.8C0 11.1183 0.127933 11.4235 0.355656 11.6485C0.583379 11.8736 0.892237 12 1.21429 12H15.7857C16.1078 12 16.4166 11.8736 16.6443 11.6485C16.8721 11.4235 17 11.1183 17 10.8V1.2C17 0.88174 16.8721 0.576515 16.6443 0.351472C16.4166 0.126428 16.1078 0 15.7857 0ZM1.21429 3L5.17893 6L1.21429 9.954V3ZM6.15036 6.75L8.12964 8.256C8.23581 8.33677 8.36602 8.38056 8.5 8.38056C8.63398 8.38056 8.76419 8.33677 8.87036 8.256L10.8496 6.75L14.9296 10.8H2.07036L6.15036 6.75ZM15.7857 9.954L11.8211 6.03L15.7857 3V9.954ZM15.7857 1.2V1.506L8.5 7.044L1.21429 1.506V1.2H15.7857Z" fill="#DADBDD" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                                 <div className='flex text-white text-center justify-center py-[11px] px-[20px] cursor-pointer bg-[#111827] ' onClick={toggelCollection}>
                                     <span>Creat New Collection</span>
@@ -599,6 +700,46 @@ const images5 = [
     {
         img: '/1.png',
         imgName: 'Collection Name Here'
+    },
+
+]
+
+
+const sortCol = [
+    {
+        heading: 'Collection 1'
+    },
+    {
+        heading: 'Lorem ipsum dolor'
+    },
+    {
+        heading: 'Collection Number 3'
+    },
+    {
+        heading: 'Collection Name'
+    },
+]
+
+
+
+const data = [
+    {
+        img: '/jhon.svg',
+        name: 'Johny Cash',
+        company: 'Company Name',
+        owner: 'view only'
+    },
+    {
+        img: '/jhon.svg',
+        name: 'Johny Cash',
+        company: 'Company Name',
+        owner: 'view only'
+    },
+    {
+        img: '/jhon.svg',
+        name: 'Johny Cash',
+        company: 'Company Name',
+        owner: 'view only'
     },
 
 ]
