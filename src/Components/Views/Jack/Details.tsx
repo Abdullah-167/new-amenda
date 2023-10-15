@@ -11,7 +11,7 @@ const Details = ({ profileName }: any) => {
     }
 
     return (
-        <section className=' xl:pl-[300px] 2xl:pl-[400px]'>
+        <section className='xl:pl-[300px] 2xl:pl-[400px]'>
             <iframe className='w-full min-h-[270px] mb-[60px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.274257380938!2d-70.56068388481569!3d41.45496659976631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e52963ac45bbcb%3A0xf05e8d125e82af10!2sDos%20Mas!5e0!3m2!1sen!2sus!4v1671220374408!5m2!1sen!2sus" loading="lazy" />
             <div className='px-[50px] 2xl:pl-[132px]  2xl:pr-[182px]'>
                 <div className='flex justify-between items-center  mb-5'>

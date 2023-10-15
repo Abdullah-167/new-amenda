@@ -5,8 +5,8 @@ import React from 'react'
 const ImageDetails = () => {
     return (
         <section>
-            <div className='xl:pl-[30px] 2xl:pl-[95px] pr-[50px] 2xl:pr-[117px]'>
-                <h1 className='text-[#111827] text-[28px] font-bold'>Image Details</h1>
+            <div className='xl:pl-[30px] 2xl:pl-[95px] xl:pr-[50px] 2xl:pr-[117px]'>
+                <h1 className='lg:block hidden text-[#111827] text-[28px] font-bold'>Image Details</h1>
                 <div className='pb-[20px]'>
                     <label className='text-[#797F88] text-sm pb-[12px] block'>Collection Name</label>
                     <input className='bg-[#F3F4F6] outline-none py-[12px] px-2 w-full' type="text" />
@@ -19,7 +19,7 @@ const ImageDetails = () => {
                     <label className='text-[#797F88] text-sm pb-[12px] block'>Collection Name</label>
                     <input className='bg-[#F3F4F6] outline-none py-[12px] px-2 w-full' type="text" />
                 </div>
-                <div className='border border-[#E5E7EB] pl-[5px] w-full  pr-[15px] py-[5px] flex justify-between items-center max-w-[400px]  mb-[57px]'>
+                <div className='border border-[#E5E7EB] pl-[5px] w-full  pr-[15px] py-[5px] hidden lg:flex justify-between items-center max-w-[400px]  mb-[57px]'>
                     <div className='flex gap-[15px] max-w-[212px] cursor-pointer min-w-[212px] items-center '>
                         <Image className='min-w-[50px] min-h-[50px] max-h-[50px]' src={'/jhon.svg'} alt='' width={53} height={53} />
                         <div className="">
@@ -38,7 +38,7 @@ const ImageDetails = () => {
                 <div>
                     <div className='flex items-center gap-3 mb-3'>
                         <label className='text-[#797F88] text-sm block'>Collection Name</label>
-                        <span>
+                        <span className='lg:block hidden'>
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.33524 2.0339C2.9524 2.0339 3.45432 2.53562 3.45432 3.15254C3.45432 3.32097 3.59103 3.45763 3.75953 3.45763C3.92803 3.45763 4.06473 3.32097 4.06473 3.15254C4.06473 2.53562 4.56666 2.0339 5.18382 2.0339C5.35232 2.0339 5.48903 1.89724 5.48903 1.72881C5.48903 1.56038 5.35232 1.42373 5.18382 1.42373C4.56666 1.42373 4.06473 0.922007 4.06473 0.305085C4.06473 0.136654 3.92803 0 3.75953 0C3.59103 0 3.45432 0.136654 3.45432 0.305085C3.45432 0.922007 2.9524 1.42373 2.33524 1.42373C2.16674 1.42373 2.03003 1.56038 2.03003 1.72881C2.03003 1.89724 2.16674 2.0339 2.33524 2.0339Z" fill="#111827" />
                                 <path d="M9.66014 9.96609C9.04297 9.96609 8.54105 9.46437 8.54105 8.84744C8.54105 8.67901 8.40435 8.54236 8.23585 8.54236C8.06735 8.54236 7.93064 8.67901 7.93064 8.84744C7.93064 9.46437 7.42872 9.96609 6.81155 9.96609C6.64306 9.96609 6.50635 10.1027 6.50635 10.2712C6.50635 10.4396 6.64306 10.5763 6.81155 10.5763C7.42872 10.5763 7.93064 11.078 7.93064 11.6949C7.93064 11.8633 8.06735 12 8.23585 12C8.40435 12 8.54105 11.8633 8.54105 11.6949C8.54105 11.078 9.04297 10.5763 9.66014 10.5763C9.82864 10.5763 9.96535 10.4396 9.96535 10.2712C9.96535 10.1027 9.82864 9.96609 9.66014 9.96609Z" fill="#111827" />

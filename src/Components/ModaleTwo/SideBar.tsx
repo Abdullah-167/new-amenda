@@ -22,7 +22,7 @@ const SideBar = () => {
     }
 
     return (
-        <section className='2xl:max-w-[380px] min-w-[380px] bg-[#F3F4F6] p-5'>
+        <section className='2xl:max-w-[380px] bg-[#F3F4F6] p-5'>
             <div className=' bg-[#FFF] max-h-[885px] mb-[10px]'>
                 <div className='bg-[#FFF]'>
                     <div className='flex gap-2 items-center justify-between py-[11px] border-b border-b-[#E5E7EB] px-5 mb-[30px]'>
@@ -116,7 +116,7 @@ const SideBar = () => {
                             </div>
                         </div>
                         <p className='text-[#797F88] text-sm block cursor-pointer mb-3 opacity-50'>Copyright</p>
-                        <div className='border border-[#E5E7EB] pl-[5px] w-full  pr-[15px] py-[5px] flex justify-between items-center max-w-[400px]  mb-[25px]'>
+                        <div className='border border-[#E5E7EB] pl-[5px] w-full  pr-[15px] py-[5px] flex justify-between items-center 2xl:max-w-[400px]  mb-[25px]'>
                             <div className='flex gap-[15px] max-w-[212px] cursor-pointer min-w-[212px] items-center '>
                                 <Image className='min-w-[50px] min-h-[50px] max-h-[50px]' src={'/jhon.svg'} alt='' width={53} height={53} />
                                 <div className="">

@@ -14,10 +14,8 @@ const ModaleTwoImage = () => {
         setModale(!modale)
     }
 
-    const [ref, instanceRef] = useKeenSlider<HTMLDivElement>({
-        slides: {
-            perView: 1,
-        },
+    const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+        initial: 0,
         slideChanged(slider) {
             setCurrentSlide(slider.track.details.rel)
         },
@@ -55,12 +53,10 @@ const ModaleTwoImage = () => {
                         )}
                     </div>
                     <div className=' relative mb-[54px]'>
-                        <div ref={ref} className='flex slider-image mx-auto overflow-hidden'>
+                        <div ref={sliderRef} className='keen-slider max-w-[1230px] mx-auto overflow-hidden'>
                             {images.map((itme, index) => {
                                 return (
-                                    <div className='keen-slider__slide w-full' key={index}>
-                                        <Image className='w-full image-width mx-auto max-h-[600px] 2xl:min-h-[824px] object-cover' src={itme.image} alt='people-img' width={1000} height={600} />
-                                    </div>
+                                    <Image className='keen-slider__slide w-full object-cover max-h-[824px]' src={itme.image} alt='people-img' width={1235} height={1235} key={index} />
                                 )
                             })}
 
@@ -88,7 +84,7 @@ const ModaleTwoImage = () => {
                         )}
                     </div>
 
-                    <div className='flex 2xl:flex-nowrap flex-wrap items-center justify-between'>
+                    <div className='xl:flex hidden 2xl:flex-nowrap flex-wrap items-center justify-between'>
                         <div className='flex 2xl:mb-0 mb-5'>
                             {data.map((item, index) => {
                                 return (
