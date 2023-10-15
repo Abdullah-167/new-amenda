@@ -10,7 +10,7 @@ const Dashboard = () => {
                 <div className='flex-grow 2xl:pr-0 sm:pr-5'>
                     <Main />
                 </div>
-                <div className=' 2xl:flex-grow-0 flex-grow 2xl:pr-0 pr-5'>
+                <div className=' 2xl:flex-grow-0 flex-grow 2xl:pr-0 sm:pr-5'>
                     <RightBar />
                 </div>
             </div>

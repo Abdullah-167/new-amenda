@@ -4,9 +4,9 @@ import TimeLine from './Timeline'
 const Hero = () => {
     return (
         <header>
-            <div className='md:flex md:justify-between gap-[144px] pt-8'>
+            <div className='md:flex md:justify-between gap-[144px] sm:pt-8 px-5'>
                 <div className='max-w-[640px] md:mb-0 mb-6'>
-                    <div className='flex items-center justify-between'>
+                    <div className='sm:flex hidden items-center justify-between'>
                         <div className='flex gap-[10px] items-center text-[#111827] text-sm font-bold cursor-pointer sm:mb-[30px] 2xl:mb-[50px]'>
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 18C11.3869 18 13.6761 17.0518 15.364 15.364C17.0518 13.6761 18 11.3869 18 9C18 6.61305 17.0518 4.32387 15.364 2.63604C13.6761 0.948212 11.3869 0 9 0C6.61305 0 4.32387 0.948212 2.63604 2.63604C0.948212 4.32387 0 6.61305 0 9C0 11.3869 0.948212 13.6761 2.63604 15.364C4.32387 17.0518 6.61305 18 9 18ZM4.5 8.982C4.49848 8.88518 4.51651 8.78905 4.55301 8.69936C4.5895 8.60966 4.64371 8.52825 4.7124 8.46L7.6752 5.5062C7.74245 5.43883 7.82231 5.38537 7.91022 5.34886C7.99813 5.31236 8.09237 5.29353 8.18756 5.29344C8.28275 5.29336 8.37703 5.31203 8.465 5.34838C8.55298 5.38473 8.63293 5.43805 8.7003 5.5053C8.76767 5.57255 8.82113 5.65241 8.85763 5.74032C8.89414 5.82823 8.91297 5.92247 8.91305 6.01766C8.91314 6.11285 8.89447 6.20713 8.85812 6.2951C8.82177 6.38308 8.76845 6.46303 8.7012 6.5304L6.966 8.2674L12.78 8.2674C12.971 8.2674 13.1541 8.34326 13.2891 8.47828C13.4241 8.61331 13.5 8.79644 13.5 8.9874C13.5 9.17836 13.4241 9.36149 13.2891 9.49652C13.1541 9.63154 12.971 9.7074 12.78 9.7074L6.9498 9.7074L8.7012 11.4588C8.83726 11.5949 8.91369 11.7794 8.91369 11.9718C8.91369 12.0671 8.89493 12.1614 8.85847 12.2494C8.82201 12.3375 8.76857 12.4174 8.7012 12.4848C8.63383 12.5522 8.55385 12.6056 8.46583 12.6421C8.37781 12.6785 8.28347 12.6973 8.1882 12.6973C7.99579 12.6973 7.81126 12.6209 7.6752 12.4848L4.7124 9.531C4.6448 9.46381 4.59122 9.38386 4.55476 9.2958C4.5183 9.20774 4.49969 9.11331 4.5 9.018V8.982Z" fill="#111827" />
@@ -41,9 +41,12 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className='border-b border-b-[#E5E7EB] pb-5'>
-                        <h1 className='text-[#111827] text-[28px] font-bold pb-[22px]'>GHB Grober Burstah Hamburg</h1>
+                        <div className='flex gap-[10px] items-center pb-[11px] sm:pb-[22px]'>
+                            <h1 className='text-[#111827] text-base sm:text-[28px] font-bold '>GHB Grober Burstah Hamburg</h1>
+                            <span className='bg-[#F3F4F6] text-sm px-3 py-[7px] cursor-pointer max-w-[69px] text-center  justify-center items-center sm:hidden flex'>GHB-G</span>
+                        </div>
                         <div className='flex gap-2 items-center text-[#797F88]'>
-                            <span className='bg-[#F3F4F6] text-sm px-3 py-[7px] cursor-pointer max-w-[69px] text-center flex justify-center items-center'>GHB-G</span>
+                            <span className='bg-[#F3F4F6] text-sm px-3 py-[7px] cursor-pointer max-w-[69px] text-center hidden sm:flex justify-center items-center'>GHB-G</span>
                             <div className='flex gap-2 items-center'>
                                 <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13 11.7209C13 14.1172 10.1474 16 6.5 16C2.85257 16 0 14.1172 0 11.7209C0 10.7833 0.445714 9.92 1.196 9.22047C1.38171 9.56279 1.58229 9.89023 1.79029 10.2102C1.35943 10.6642 1.11429 11.1777 1.11429 11.7209C1.11429 13.4326 3.58057 14.8837 6.5 14.8837C9.41943 14.8837 11.8857 13.4326 11.8857 11.7209C11.8857 11.1777 11.6406 10.6642 11.2097 10.2102C11.4177 9.89023 11.6183 9.56279 11.804 9.22047C12.5617 9.92 13 10.7758 13 11.7209ZM11.5143 5.02326C11.5143 8.96 7.04971 12.733 6.85657 12.8967C6.75257 12.986 6.62629 13.0233 6.5 13.0233C6.37371 13.0233 6.24743 12.9786 6.14343 12.8967C5.95029 12.7405 1.48571 8.96 1.48571 5.02326C1.48571 2.25488 3.73657 0 6.5 0C9.26343 0 11.5143 2.25488 11.5143 5.02326ZM7.98571 5.02326C7.98571 4.20465 7.31714 3.53488 6.5 3.53488C5.68286 3.53488 5.01429 4.20465 5.01429 5.02326C5.01429 5.84186 5.68286 6.51163 6.5 6.51163C7.31714 6.51163 7.98571 5.84186 7.98571 5.02326Z" fill="#797F88" />
@@ -53,9 +56,9 @@ const Hero = () => {
                         </div>
                     </div>
                     <p className='text-[#797F88] text-[15px] mb-[30px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <div className='flex flex-wrap justify-between max-w-[534px] text-[#797F88]'>
-                        <div className='border cursor-pointer text-sm max-h-[30px] border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center mb-2'>LP 6</div>
-                        <div className='text-sm'>
+                    <div className='flex flex-wrap sm:flex-row flex-col justify-between max-w-[534px] text-[#797F88]'>
+                        <div className='border cursor-pointer text-sm max-h-[30px] border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center mb-[15px] sm:mb-2 max-w-[70px]'>LP 6</div>
+                        <div className=' flex flex-wrap sm:block text-sm'>
                             <p className='border cursor-pointer border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center mb-2'>Altersgerechtes Wohnen</p>
                             <div className='flex gap-2 mb-2'>
                                 <p className='border cursor-pointer border-[#E5E7EB] py-[7px] px-3 flex justify-center items-center'>3-Feld Sporthalle</p>

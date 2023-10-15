@@ -100,3 +100,79 @@ body {
 .parent-bg {
   background: linear-gradient(180deg, rgba(17, 24, 39, 0.00) 0%, #111827 100%);
 }
+
+
+.modal-one {
+  display: flex;
+  min-width: none;
+}
+
+.sidebar-bulkEdit {
+  max-width: 350px;
+  min-width: 350px;
+}
+
+
+@media (max-width: 1390px) {
+  .modal-one {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-bulkEdit {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
+
+
+.img-format {
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+}
+
+
+
+.modale-two {
+  display: flex;
+}
+
+
+.arrow-left {
+  left: -112px;
+}
+
+.arrow-right {
+  right: -112px;
+}
+
+
+@media (max-width: 1390px) {
+  .modale-two {
+    display: flex;
+  }
+  
+}
+
+.image-section2  {
+  padding: 0 150px;
+}
+
+@media (max-width: 1860px) {
+  .image-section2 {
+    padding: 0 20px;
+  }
+  .arrow-left {
+    left: -10px;
+  }
+  
+  .arrow-right {
+    right: -5px;
+  }
+  
+}
+
+
+.slider-image {
+  max-width: 1200px;
+}

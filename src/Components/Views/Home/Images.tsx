@@ -35,7 +35,7 @@ const Images = () => {
                 <div className=''>
                     <Image className='max-h-[500px] 2xl:max-h-full min-h-[400px] 2xl:min-h-[505px] 2xl:max-w-full max-w-[400px] w-full' src={selectedImage} width={560} height={500} alt='slider-images' />
                 </div>
-                <div className='pt-3 2xl:block flex gap-2'>
+                <div className='pt-3 2xl:block flex gap-2 px-3'>
                     {images.map((item, index) => {
                         return (
                             <div

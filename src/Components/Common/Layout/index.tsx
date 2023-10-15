@@ -29,7 +29,7 @@ const Layout = ({ children }: any) => {
                     <Sidebar />
                 </div>
             </div>
-            <div className={` md:px-0 px-5 ${isBlogPage ? 'ml-[20px] xl:ml-0 xl:pl-[300px]' : 'md:pl-[300px]'}`}>
+            <div className={` md:px-0  ${isBlogPage ? 'ml-[20px] xl:ml-0 xl:pl-[300px]' : 'md:pl-[300px]'}`}>
                 {children}
             </div>
         </div>
