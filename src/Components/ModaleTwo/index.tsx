@@ -6,7 +6,7 @@ const ModaleTwo = () => {
     return (
         <div>
             <div className='flex 2xl:flex-nowrap flex-wrap'>
-                <div className=' flex-grow'>
+                <div className=''>
                     <ModaleTwoImage />
                 </div>
                 <div className=' flex-grow'>

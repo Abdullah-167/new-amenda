@@ -332,8 +332,7 @@ const TimeLine = () => {
                                     {resTimeline.map((item, index) => {
                                         return (
                                             <div className="relative overflow-hidden mb-[24px] sm:px-0 px-5" key={index}>
-                                                <p className="text-[#111827] text-sm font-bold mb-[18px]">{item.date}</p>
-                                                <div className=" rotate-90 absolute top-12 -left-[133px] border-syl w-full h-1 "></div>
+                                                <div className=" rotate-90 absolute top-12 -left-[121px] border-syl w-full h-1 "></div>
                                                 <div className=" ">
                                                     {item.data.map((newItem, idx) => {
                                                         return (
@@ -540,12 +539,11 @@ const TimeLine = () => {
                                     {resTimeline.map((item, index) => {
                                         return (
                                             <div className="relative overflow-hidden mb-[24px] sm:px-0 px-5" key={index}>
-                                                <p className="text-[#111827] text-sm font-bold mb-[18px]">{item.date}</p>
-                                                <div className=" rotate-90 absolute top-12 -left-[133px] border-syl w-full h-1 "></div>
+                                                <div className=" rotate-90 absolute top-12 -left-[121px] border-syl w-full h-1 "></div>
                                                 <div className=" ">
                                                     {item.data.map((newItem, idx) => {
                                                         return (
-                                                            <div key={idx} className=" flex gap-5 items-center justify-between  relative mb-[7px]">
+                                                            <div key={idx} className=" flex  gap-4 items-center justify-between  relative mb-[7px]">
                                                                 <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] inset-y-0 top-8 flex justify-center  z-[100] items-center h-[32px] min-w-[32px] mx-auto mb-2">{newItem.number}</div>
                                                                 <div className="flex justify-between px-[10px] py-[10px] border border-[#E5E7EB] max-w-[270px] min-w-[270px] ">
                                                                     <div className="">
@@ -795,13 +793,12 @@ const TimeLine = () => {
                                 <div className="sm:hidden block">
                                     {resTimeline.map((item, index) => {
                                         return (
-                                            <div className="relative overflow-hidden mb-[24px]" key={index}>
-                                                <p className="text-[#111827] text-sm font-bold mb-[18px]">{item.date}</p>
-                                                <div className=" rotate-90 absolute top-12 -left-[133px] border-syl w-full h-1 "></div>
+                                            <div className="relative overflow-hidden mb-[24px] sm:px-0 px-5" key={index}>
+                                                <div className=" rotate-90 absolute top-12 -left-[121px] border-syl w-full h-1 "></div>
                                                 <div className=" ">
                                                     {item.data.map((newItem, idx) => {
                                                         return (
-                                                            <div key={idx} className=" flex  items-center justify-between  relative mb-[7px]">
+                                                            <div key={idx} className=" flex  gap-4 items-center justify-between  relative mb-[7px]">
                                                                 <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] inset-y-0 top-8 flex justify-center  z-[100] items-center h-[32px] min-w-[32px] mx-auto mb-2">{newItem.number}</div>
                                                                 <div className="flex justify-between px-[10px] py-[10px] border border-[#E5E7EB] max-w-[270px] min-w-[270px] ">
                                                                     <div className="">
@@ -993,10 +990,10 @@ const TimeLine = () => {
                                                     <div className={` pb-5 relative`}>
                                                         {item.data.map((newItem, idx) => {
                                                             return (
-                                                                <div className=" border-b border-b-[#E5E7EB] flex items-center 2xl:flex-nowrap flex-wrap justify-between pb-[30px] mb-[30px]"
+                                                                <div className=" sm:border-b border-b-[#E5E7EB] flex items-center 2xl:flex-nowrap flex-wrap justify-between pb-[30px] sm:mb-[30px]"
                                                                     key={idx}
                                                                 >
-                                                                    <div className="flex flex-wrap justify-between gap-2 sm:gap-10 items-center 2xl:mb-0 mb-5">
+                                                                    <div className="flex flex-wrap justify-between gap-2 sm:gap-10 items-center 2xl:mb-0 mb-[15px]">
                                                                         <div className='flex gap-[15px] items-center'>
                                                                             <Image className=" object-cover max-w-[60px] sm:max-w-[100px]" src={newItem.mainImg} width={100} height={100} alt="time-line-image" />
                                                                             <div>
@@ -1267,16 +1264,16 @@ const TimeLine = () => {
                                     <div className='border cursor-pointer text-[14px] max-h-[30px] border-[#111827] py-[7px] px-[18px] flex justify-center items-center mb-2'>LP 6</div>
                                     <div className='border cursor-pointer text-[14px] max-h-[30px] border-[#111827] bg-[#111827] text-white py-[7px] px-[18px] flex justify-center items-center mb-2'>LP 6</div>
                                 </div>
-                                <div ref={ref} className={`keen-slider flex gap-5 overflow-x-auto  pb-5 relative`}>
-                                    <div className=" absolute top-12 border-syl w-full h-1 "></div>
-                                    {
-                                        timeLine.map((newItem, idx) => {
+                                <div className='hidden sm:block'>
+                                    <div ref={ref} className={`keen-slider flex gap-5 overflow-x-auto  pb-5 relative`}>
+                                        <div className=" absolute top-12 border-syl w-full h-1 "></div>
+                                        {timeLine.map((newItem, idx) => {
                                             return (
                                                 <div key={idx} className="keen-slider__slide z-[1000] relative">
                                                     <div className=" absolute top-[45px] right-0 "> {newItem.arrow} </div>
                                                     <p className=" text-sm text-center font-bold mb-4">{newItem.month}</p>
                                                     <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] flex justify-center z-[100] items-center h-[32px] max-w-[32px] mx-auto mb-2">{newItem.number}</div>
-                                                    <div className="w-[2px] h-[30px]  mx-auto z-[1000]  bg-black inset-x-0 mb-[20px]">{newItem.line}</div>
+                                                    <div className="w-[2px] h-[30px]  mx-auto z-[1000]  bg-black inset-x-0 mb-[20px] sm:block hidden">{newItem.line}</div>
                                                     <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
                                                         <p className="text-[14px] text-[#797F88]  text-center pb-[15px]">{newItem.newTimeLineText}</p>
                                                         {newItem.images && (
@@ -1304,32 +1301,36 @@ const TimeLine = () => {
                                                 </div>
                                             )
                                         })
-                                    }
-                                    <div className="sm:hidden block">
-                                        {resTimeline.map((item, index) => {
-                                            return (
-                                                <div className="relative overflow-hidden mb-[24px]" key={index}>
-                                                    <p className="text-[#111827] text-sm font-bold mb-[18px]">{item.date}</p>
-                                                    <div className=" rotate-90 absolute top-12 -left-[133px] border-syl w-full h-1 "></div>
-                                                    <div className=" ">
-                                                        {item.data.map((newItem, idx) => {
-                                                            return (
-                                                                <div key={idx} className=" flex  items-center justify-between  relative mb-[7px]">
-                                                                    <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] inset-y-0 top-8 flex justify-center  z-[100] items-center h-[32px] min-w-[32px] mx-auto mb-2">{newItem.number}</div>
-                                                                    <div className="flex justify-between px-[10px] py-[10px] border border-[#E5E7EB] max-w-[270px] min-w-[270px] ">
-                                                                        <div className="">
-                                                                            <h2 className="text-[#111827] text-sm pb-[6px]">{newItem.heading}</h2>
-                                                                            <p className="text-[#4B5563] text-sm">{newItem.description}</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            )
-                                                        })}
-                                                    </div>
-                                                </div>
-                                            )
-                                        })}
+                                        }
+
                                     </div>
+                                </div>
+                                <div className="sm:hidden block">
+                                    {resTimeline.map((item, index) => {
+                                        return (
+                                            <div className="relative overflow-hidden mb-[24px]" key={index}>
+                                                <p className="text-[#111827] text-sm font-bold mb-[18px]">{item.date}</p>
+                                                <div className=" rotate-90 absolute top-12 -left-[133px] border-syl w-full h-1 "></div>
+                                                <div className=" ">
+                                                    {item.data.map((newItem, idx) => {
+                                                        return (
+                                                            <div key={idx} className=" flex  items-center justify-between  relative mb-[7px]">
+                                                                <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] inset-y-0 top-8 flex justify-center  z-[100] items-center h-[32px] min-w-[32px] mx-auto mb-2">{newItem.number}</div>
+                                                                <div className="flex justify-between items-center px-[10px] py-[10px] border border-[#E5E7EB] max-w-[270px] min-w-[270px] ">
+                                                                    <div className="">
+                                                                        <h2 className="text-[#111827] text-sm pb-[6px]">{newItem.heading}</h2>
+                                                                        <p className="text-[#4B5563] text-sm">{newItem.description}</p>
+                                                                    </div>
+                                                                    <Image src={newItem.mainImg} alt='' width={50} height={50} />
+
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                             </div>
                         )}

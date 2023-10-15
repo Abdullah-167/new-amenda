@@ -23,10 +23,11 @@ const SideBar = () => {
 
     return (
         <aside className=' xl:fixed xl:left-auto left-5 xl:top-auto top-[64px] h-full'>
-            <div className='pr-[50px] max-w-[300px] 2xl:max-w-[444px] relative h-full min-h-screen max-h-[100vh] border-r border-r-[#E5E7EB]'>
-                <div className='flex gap-[15px] items-center cursor-pointer mb-[51px] mt-[25px]' onClick={handleDropdoen}>
+            <div className='pr-[50px] w-full lg:max-w-[300px] 2xl:max-w-[444px] relative h-full min-h-screen max-h-[100vh] lg:border-r border-r-[#E5E7EB]'>
+                <div className='flex gap-[15px] items-center justify-between lg:justify-start cursor-pointer mb-[51px] mt-[25px]' onClick={handleDropdoen}>
                     <h1 className=' font-bold text-[#111827] text-[24px]'>Kontaktverzeichnis</h1>
-                    <Image className={` transition-all duration-300 ${handleModale ? ' rotate-180 ' : ''}`} src={'/arrowdown.svg'} alt={'btn-arrow'} width={20} height={20} />
+                    <Image className={`lg:block hidden transition-all duration-300 ${handleModale ? ' rotate-180 ' : ''}`} src={'/arrowdown.svg'} alt={'btn-arrow'} width={20} height={20} />
+                    <Image className={`block lg:hidden transition-all duration-300 `} src={'/plus.svg'} alt={'btn-arrow'} width={20} height={20} />
                 </div>
                 {handleModale && (
                     <div className='shadow-dropdown absolute z-[2000] top-[50px] min-w-[294px] max-w-[294px] bg-[#FFF] px-5 pt-5 pb-[30px]'>
@@ -94,9 +95,9 @@ const SideBar = () => {
                             </defs>
                         </svg>
                     </div>
-                    <input className='bg-[#F3F4F6]  outline-none py-[14px] pl-[37px] w-full max-w-[346px]' placeholder='Search contacts..' type="text" />
+                    <input className='bg-[#F3F4F6]  outline-none py-[14px] pl-[37px] w-full lg:max-w-[346px]' placeholder='Search contacts..' type="text" />
                 </div>
-                <div className='flex mb-[30px] border-b border-b-[#E5E7EB] justify-between'>
+                <div className='lg:flex hidden mb-[30px] border-b border-b-[#E5E7EB] justify-between'>
                     <p className={` text-xs font-bold pb-[10px] uppercase cursor-pointer border-b px-[20px] 2xl:px-[50px] ${activeTab === 1 ? 'text-[#111827] border-b-[#111827]' : 'text-[#797F88] border-b-[#E5E7EB]'}`} onClick={() => handleTab(1)}>Individuals</p>
                     <p className={` text-xs font-bold pb-[10px] uppercase cursor-pointer border-b px-[20px] 2xl:px-[60px] ${activeTab === 2 ? 'text-[#111827] border-b-[#111827]' : 'text-[#797F88] border-b-[#E5E7EB]'}`} onClick={() => handleTab(2)}>Groped</p>
                 </div>
@@ -109,7 +110,7 @@ const SideBar = () => {
                     </svg>
                 </div>
                 {activeTab === 1 && (
-                    <div className='max-h-[400px] overflow-auto tab-scroll'>
+                    <div className='lg:block hidden max-h-[400px] overflow-auto tab-scroll'>
                         {data.map((item, index) => {
                             return (
                                 <div className='flex  w-full' key={index}>

@@ -5,7 +5,7 @@ import Layout from '@/Components/Common/Layout'
 const Collection = () => {
     return (
         <Layout>
-            <div className='sm:pr-[50px]'>
+            <div className='sm:pr-[50px] px-5'>
                 <Section />
             </div>
         </Layout>

@@ -10,8 +10,8 @@ import Section from './Section'
 const Gallery = () => {
     return (
         <Layout>
-            <div className='flex 2xl:flex-nowrap flex-wrap 2xl:gap-[90px] gap-10 w-full pr-5'>
-                <div className=' 2xl:flex-grow-0 flex-grow mt-[50px]'>
+            <div className='flex 2xl:flex-nowrap  flex-wrap-reverse 2xl:gap-[90px] gap-10 w-full px-5'>
+                <div className=' 2xl:flex-grow-0 flex-grow sm:mt-[50px]'>
                     <AddImage />
                 </div>
                 <Section />

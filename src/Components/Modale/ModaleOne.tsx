@@ -4,7 +4,7 @@ import React from 'react'
 const ModaleOne = () => {
     return (
         <section>
-            <div className='sidebar-bulkEdit w-full 2xl:min-w-[300px] pl-[20px] 2xl:pl-[50px] pr-[28px] '>
+            <div className='sidebar-bulkEdit w-full 2xl:min-w-[300px] sm:pl-[20px] 2xl:pl-[50px] lg:pr-[28px] '>
                 <div className='grid grid-cols-3 gap-x-[14px] gap-y-[10px] mb-[15px] '>
                     {images.map((item, index) => {
                         return (
@@ -12,7 +12,7 @@ const ModaleOne = () => {
                         )
                     })}
                 </div>
-                <div className='2xl:max-w-[280px] w-full px-5 2xl:px-[60px] py-[23px] border border-dashed border-[#DBDBDB] bg-[#F6F6F6] mb-[124px]'>
+                <div className='2xl:max-w-[280px] w-full px-5 2xl:px-[60px] py-[23px] border border-dashed border-[#DBDBDB] bg-[#F6F6F6] mb-5 xl:mb-[124px]'>
                     <span className='flex justify-center mb-[10px]'>
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g opacity="0.3" clip-path="url(#clip0_1_2511)">
@@ -41,7 +41,7 @@ const ModaleOne = () => {
                 <div>
                     <h2 className='text-[#111827] text-sm font-bold pb-0.5'>General Tags</h2>
                     <p className='text-[#797F88] text-sm opacity-50 mb-5'>General Tags get applied to all those images</p>
-                    <div className='bg-[#F3F4F6] py-[9px] px-[10px] mb-[20px] max-w-[280px] mx-auto'>
+                    <div className='bg-[#F3F4F6] py-[9px] px-[10px] mb-[20px] 2xl:max-w-[280px] sm:mx-auto'>
                         <div className='flex gap-2 items-center flex-wrap'>
                             <div className='flex gap-2 items-center bg-[#fff] px-2 py-[5px] cursor-pointer'>
                                 <p className='text-[#797F88] text-sm block'>buildings</p>
@@ -62,6 +62,30 @@ const ModaleOne = () => {
                                 </svg>
                             </div>
                             <p className='text-[#797F88] text-sm block cursor-pointer'>Add A Tag</p>
+                        </div>
+                    </div>
+                    <div className='sm:hidden pb-[20px]'>
+                        <label className='text-[#111827] text-sm pb-0.5 block'>Copyright / Person</label>
+                        <label className='text-[#797F88] text-sm pb-[12px] block'>Collection Name</label>
+                        <input className='bg-[#F3F4F6] outline-none py-[12px] px-2 w-full' type="text" />
+                    </div>
+                    <div className='mb-10 sm:hidden flex text-center text-white justify-center gap-[20px] items-center py-[11px] px-[20px] cursor-pointer bg-[#111827] '>
+                        <p>Apply</p>
+                    </div>
+                    <div className='fixed left-0 sm:hidden flex gap-[5px] py-[10px] justify-start items-center w-full bottom-0 bg-[#FFF]'>
+                        <div className='flex text-[#C83F3F] justify-between gap-[20px] items-center  py-[12px] px-[36px]  cursor-pointer '>
+                            <span>Delete</span>
+                            <span>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.055 6.75002L10.7955 13.5M7.2045 13.5L6.945 6.75002M14.421 4.34252C14.6775 4.38152 14.9325 4.42277 15.1875 4.46702M14.421 4.34252L13.62 14.7548C13.5873 15.1787 13.3958 15.5746 13.0838 15.8635C12.7717 16.1523 12.3622 16.3126 11.937 16.3125H6.063C5.63782 16.3126 5.22827 16.1523 4.91623 15.8635C4.6042 15.5746 4.41269 15.1787 4.38 14.7548L3.579 4.34252M14.421 4.34252C13.5554 4.21166 12.6853 4.11235 11.8125 4.04477M3.579 4.34252C3.3225 4.38077 3.0675 4.42202 2.8125 4.46627M3.579 4.34252C4.4446 4.21166 5.31468 4.11235 6.1875 4.04477M11.8125 4.04477V3.35777C11.8125 2.47277 11.13 1.73477 10.245 1.70702C9.41521 1.6805 8.58479 1.6805 7.755 1.70702C6.87 1.73477 6.1875 2.47352 6.1875 3.35777V4.04477M11.8125 4.04477C9.94029 3.90008 8.05971 3.90008 6.1875 4.04477" stroke="#C83F3F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div className=' sm:hidden flex text-center text-white justify-center items-center py-[12px] px-[36px] cursor-pointer bg-[#111827] '>
+                            <p>Apply</p>
+                        </div>
+                        <div className=' sm:hidden flex text-center text-white justify-center items-center py-[12px] px-[36px] cursor-pointer bg-[#111827] '>
+                            <p>Apply</p>
                         </div>
                     </div>
                 </div>
