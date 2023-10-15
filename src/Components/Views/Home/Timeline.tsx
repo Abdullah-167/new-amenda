@@ -39,7 +39,7 @@ const TimeLine = () => {
                 slides: { perView: 6, },
             },
         },
-        slides: { perView: 1, spacing: 5 },
+        slides: { perView: 3, spacing: 5 },
     })
 
     const handleTimelineBtn = (index: any) => {
@@ -823,7 +823,7 @@ const TimeLine = () => {
                             <div>
                                 {DataE.map((item, index) => {
                                     return (
-                                        <div className="sm:block hidden relative" key={index}
+                                        <div className=" relative" key={index}
                                         >
                                             <div
                                                 className={`transition-all duration-1000 relative ${activeTab ? "opacity-100" : "opacity-0"
@@ -831,64 +831,112 @@ const TimeLine = () => {
                                             >
 
                                                 {text === 0 && (
-                                                    <div ref={ref} className={`keen-slider flex gap-5 overflow-x-auto  pb-5 relative`}>
-                                                        <div className=" absolute top-12 border-syl w-full h-1 "></div>
-                                                        {item.data.map((newItem, idx) => {
-                                                            return (
-                                                                <div key={idx} className="keen-slider__slide z-[1000] relative">
-                                                                    <p className=" text-sm text-center font-bold mb-4">{newItem.month}</p>
-                                                                    <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] flex justify-center z-[100] items-center h-[32px] max-w-[32px] mx-auto mb-2">{newItem.number}</div>
-                                                                    <div className="w-[2px] h-[15px]  mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
-                                                                    <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
-                                                                        <div className="w-[2px] h-[15px] absolute mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
-                                                                        <Image className="min-w-[244px] min-h-[244px] object-cover" src={newItem.mainImg} width={500} height={500} alt="time-line-image" />
-                                                                        <div className={` ${idx === 0 ? 'bg-black' : ''} bg-opacity-30 absolute w-full h-full top-0`}></div>
-                                                                        <section className={` absolute w-full h-full top-[130px] pb-1 px-1`}>
-                                                                            {newItem.isImgname && (
-                                                                                <p className="text-sm text-white pb-2">{newItem.imgName}</p>
-                                                                            )}
-                                                                            <div className="flex flex-wrap gap-2 ">
-                                                                                {newItem.isBtnOne && (
-                                                                                    <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnOne}</p>
-                                                                                )}
-                                                                                {newItem.isBtnTwo && (
-                                                                                    <p className='bg-white text-black  font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnTwo}</p>
-                                                                                )}
-                                                                                {newItem.isBtnThree && (
+                                                    <div>
 
-                                                                                    <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnThree}</p>
+                                                        <div ref={ref} className={`keen-slider gap-5 overflow-x-auto  pb-5 relative`}>
+                                                            <div className=" absolute top-12 border-syl w-full h-1 "></div>
+                                                            {item.data.map((newItem, idx) => {
+                                                                return (
+                                                                    <div key={idx} className="keen-slider__slide z-[1000] relative">
+                                                                        <p className=" text-sm text-center font-bold mb-4">{newItem.month}</p>
+                                                                        <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] flex justify-center z-[100] items-center h-[32px] max-w-[32px] mx-auto mb-2">{newItem.number}</div>
+                                                                        <div className="w-[2px] h-[15px]  mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
+                                                                        <div className="time-line-tags relative max-w-[300px] max-h-[300px] overflow-hidden">
+                                                                            <div className="w-[2px] h-[15px] absolute mx-auto z-[1000]  bg-black inset-x-0">{newItem.line}</div>
+                                                                            <Image className="sm:min-w-[244px] sm:max-w-full max-w-[106px] sm:min-h-[244px] object-cover" src={newItem.mainImg} width={500} height={500} alt="time-line-image" />
+                                                                            <div className={` sm:block hidden ${idx === 0 ? 'bg-black' : ''} bg-opacity-30 absolute w-full h-full top-0`}></div>
+                                                                            <div>
+                                                                                {newItem.isImgname && (
+                                                                                    <p className="text-xs  pb-2">{newItem.imgName}</p>
                                                                                 )}
-                                                                                {newItem.isBtnFour && (
-                                                                                    <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnFour}</p>
-                                                                                )}
+                                                                                <div className="flex flex-wrap gap-2 ">
+                                                                                    {newItem.isBtnOne && (
+                                                                                        <p className=' font-medium bg-[#F3F4F6] cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnOne}</p>
+                                                                                    )}
+                                                                                    {newItem.isBtnTwo && (
+                                                                                        <p className=' text-black  font-medium bg-[#F3F4F6] cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnTwo}</p>
+                                                                                    )}
+                                                                                    {newItem.isBtnThree && (
+
+                                                                                        <p className=' font-medium bg-[#F3F4F6] cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnThree}</p>
+                                                                                    )}
+                                                                                    {newItem.isBtnFour && (
+                                                                                        <p className=' font-medium bg-[#F3F4F6] cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnFour}</p>
+                                                                                    )}
+                                                                                </div>
                                                                             </div>
-                                                                        </section>
-                                                                        <main className="bg-black inset-y-0 bg-opacity-40 absolute w-full h-full top-0 cursor-pointer">
-                                                                            <div className="flex gap-1 py-1 max-w-[120px] mt-[110px] px-2 mx-auto bg-white items-center justify-center">
-                                                                                <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
-                                                                                </svg>
-                                                                                <p className="text-[13px] text-[#111827] font-medium">View Images</p>
-                                                                            </div>
-                                                                        </main>
-                                                                    </div>
-                                                                    <div>
+                                                                            <section className={` sm:block hidden absolute w-full h-full top-[130px] pb-1 px-1`}>
+                                                                                {newItem.isImgname && (
+                                                                                    <p className="text-sm text-white pb-2">{newItem.imgName}</p>
+                                                                                )}
+                                                                                <div className="flex flex-wrap gap-2 ">
+                                                                                    {newItem.isBtnOne && (
+                                                                                        <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnOne}</p>
+                                                                                    )}
+                                                                                    {newItem.isBtnTwo && (
+                                                                                        <p className='bg-white text-black  font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnTwo}</p>
+                                                                                    )}
+                                                                                    {newItem.isBtnThree && (
 
-                                                                    </div>
-                                                                </div>
-                                                            )
-                                                        })}
+                                                                                        <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnThree}</p>
+                                                                                    )}
+                                                                                    {newItem.isBtnFour && (
+                                                                                        <p className='time-line-tags-btn  text-white font-medium cursor-pointer py-[5px] px-1.5 flex justify-center items-center'>{newItem.btnFour}</p>
+                                                                                    )}
+                                                                                </div>
+                                                                            </section>
+                                                                            <main className="sm:block hidden bg-black inset-y-0 bg-opacity-40 absolute w-full h-full top-0 cursor-pointer">
+                                                                                <div className="flex gap-1 py-1 max-w-[120px] mt-[110px] px-2 mx-auto bg-white items-center justify-center">
+                                                                                    <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
+                                                                                    </svg>
+                                                                                    <p className="text-[13px] text-[#111827] font-medium">View Images</p>
+                                                                                </div>
+                                                                            </main>
+                                                                        </div>
+                                                                        <div>
 
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            })}
+
+                                                        </div>
+                                                        {/* <div className="sm:hidden block">
+                                                            {resTimeline.map((item, index) => {
+                                                                return (
+                                                                    <div className="relative overflow-hidden mb-[24px]" key={index}>
+                                                                        <p className="text-[#111827] text-sm font-bold mb-[18px]">{item.date}</p>
+                                                                        <div className=" rotate-90 absolute top-12 -left-[133px] border-syl w-full h-1 "></div>
+                                                                        <div className=" ">
+                                                                            {item.data.map((newItem, idx) => {
+                                                                                return (
+                                                                                    <div key={idx} className=" flex gap-5  items-center justify-between  relative mb-[7px]">
+                                                                                        <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] inset-y-0 top-8 flex justify-center  z-[100] items-center h-[32px] min-w-[32px] mx-auto mb-2">{newItem.number}</div>
+                                                                                        <div className="flex justify-between px-[10px] py-[10px] border border-[#E5E7EB] max-w-[270px] min-w-[270px] ">
+                                                                                            <div className="">
+                                                                                                <h2 className="text-[#111827] text-sm pb-[6px]">{newItem.heading}</h2>
+                                                                                                <p className="text-[#4B5563] text-sm">{newItem.description}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                )
+                                                                            })}
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            })}
+                                                        </div> */}
                                                     </div>
                                                 )}
                                                 {text === 1 && (
-                                                    <div className={` grid grid-cols-2 xl:grid-cols-4 gap-5 pb-5 relative`}>
+                                                    <div className={` grid grid-cols-3 xl:grid-cols-4 gap-5 pb-5 relative`}>
                                                         {item.data.map((newItem, idx) => {
                                                             return (
                                                                 <div key={idx} className="z-[1000] relative">
                                                                     <div className="time-line-tags relative max-w-[376px] max-h-[376px] overflow-hidden">
                                                                         <Image className=" object-cover" src={newItem.mainImg} width={376} height={376} alt="time-line-image" />
-                                                                        <section className={` absolute w-full bottom-0 pb-1 px-1`}>
+                                                                        <section className={`sm:block hidden absolute w-full bottom-0 pb-1 px-1`}>
                                                                             {newItem.isImgname && (
                                                                                 <p className="text-sm text-white pb-2">{newItem.imgName}</p>
                                                                             )}
@@ -908,7 +956,7 @@ const TimeLine = () => {
                                                                                 )}
                                                                             </div>
                                                                         </section>
-                                                                        <section className={` absolute w-full top-0 right-0 pb-1 px-1`}>
+                                                                        <section className={`sm:block hidden absolute w-full top-0 right-0 pb-1 px-1`}>
                                                                             <div className="flex justify-end flex-wrap gap-2 ">
                                                                                 {newItem.isImgTopBtn && (
                                                                                     <div className='flex gap-[10px] px-3 py-[10px] items-center bg-[#FFF] opacity-75 '>
@@ -923,7 +971,7 @@ const TimeLine = () => {
                                                                                 )}
                                                                             </div>
                                                                         </section>
-                                                                        <main className="bg-black flex justify-center items-center inset-y-0 bg-opacity-40 absolute w-full h-full top-0 cursor-pointer">
+                                                                        <main className="bg-black hidden sm:flex justify-center items-center inset-y-0 bg-opacity-40 absolute w-full h-full top-0 cursor-pointer">
                                                                             <div className="flex justify-center gap-1 py-1 max-w-[120px] px-2 mx-auto bg-white items-center">
                                                                                 <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.22208 0.729675C4.84042 0.729858 1.71996 2.55531 0.0621249 5.50267C0.0214265 5.57502 3.20479e-05 5.65662 3.59768e-08 5.73963C-3.19759e-05 5.82263 0.0212995 5.90425 0.0619421 5.97663C1.71813 8.92637 4.83914 10.754 8.2219 10.7555C8.22171 10.7555 8.22208 10.7555 8.2219 10.7555C11.6036 10.7542 14.7242 8.92765 16.3809 5.97955C16.4216 5.90719 16.443 5.82558 16.443 5.74257C16.443 5.65957 16.4216 5.57796 16.3809 5.5056C14.7242 2.5575 11.6037 0.731138 8.22208 0.729675C8.2222 0.729675 8.22196 0.729675 8.22208 0.729675ZM8.2219 1.69696C11.1643 1.69806 13.8821 3.23727 15.3992 5.74267C13.8821 8.24788 11.1645 9.78691 8.22245 9.78819C5.2791 9.78709 2.56058 8.24678 1.04367 5.73992C2.56167 3.23544 5.27983 1.69714 8.2219 1.69696ZM8.22153 2.81065C6.60793 2.81065 5.28952 4.12906 5.28952 5.74267C5.28952 7.35609 6.60793 8.6745 8.22153 8.6745C9.83495 8.6745 11.1534 7.35609 11.1534 5.74267C11.1534 4.12906 9.83495 2.81065 8.22153 2.81065ZM8.22153 3.77794C9.31219 3.77794 10.1861 4.65182 10.1861 5.74267C10.1861 6.83333 9.31219 7.70721 8.22153 7.70721C7.13069 7.70721 6.2568 6.83333 6.2568 5.74267C6.2568 4.65182 7.13069 3.77794 8.22153 3.77794Z" fill="black" />
@@ -948,13 +996,15 @@ const TimeLine = () => {
                                                                 <div className=" border-b border-b-[#E5E7EB] flex items-center 2xl:flex-nowrap flex-wrap justify-between pb-[30px] mb-[30px]"
                                                                     key={idx}
                                                                 >
-                                                                    <div className="flex justify-between gap-10 items-center 2xl:mb-0 mb-5">
-                                                                        <Image className=" object-cover" src={newItem.mainImg} width={100} height={100} alt="time-line-image" />
-                                                                        <div>
-                                                                            <p className=" 2xl:whitespace-nowrap text-[#111827] text-base font-normal pb-[7px]">{newItem.imgName}</p>
-                                                                            <span className="text-[#797F88] text-[14px]">Created: 9/27/2023</span>
+                                                                    <div className="flex flex-wrap justify-between gap-2 sm:gap-10 items-center 2xl:mb-0 mb-5">
+                                                                        <div className='flex gap-[15px] items-center'>
+                                                                            <Image className=" object-cover max-w-[60px] sm:max-w-[100px]" src={newItem.mainImg} width={100} height={100} alt="time-line-image" />
+                                                                            <div>
+                                                                                <p className=" 2xl:whitespace-nowrap text-[#111827] text-base font-normal pb-[7px]">{newItem.imgName}</p>
+                                                                                <span className="text-[#797F88] text-[14px]">Created: 9/27/2023</span>
+                                                                            </div>
                                                                         </div>
-                                                                        <p className="max-w-[570px] pl-[21px] text-[#797F88] text-[15px]">{newItem.description}</p>
+                                                                        <p className="max-w-[570px] sm:pl-[21px] text-[#797F88] text-[15px]">{newItem.description}</p>
                                                                     </div>
                                                                     <div className=" flex gap-[5px]">
                                                                         <p className='cursor-pointer text-[14px] text-[#797F88] bg-[#F3F4F6] py-[7px] px-3 flex justify-center items-center mb-2'>{newItem.btnOne}</p>
@@ -1000,31 +1050,7 @@ const TimeLine = () => {
                                         </div>
                                     );
                                 })}
-                                <div className="sm:hidden block">
-                                    {resTimeline.map((item, index) => {
-                                        return (
-                                            <div className="relative overflow-hidden mb-[24px]" key={index}>
-                                                <p className="text-[#111827] text-sm font-bold mb-[18px]">{item.date}</p>
-                                                <div className=" rotate-90 absolute top-12 -left-[133px] border-syl w-full h-1 "></div>
-                                                <div className=" ">
-                                                    {item.data.map((newItem, idx) => {
-                                                        return (
-                                                            <div key={idx} className=" flex gap-5  items-center justify-between  relative mb-[7px]">
-                                                                <div className="bg-[#111827] text-[#fff] rounded-full text-[12px] inset-y-0 top-8 flex justify-center  z-[100] items-center h-[32px] min-w-[32px] mx-auto mb-2">{newItem.number}</div>
-                                                                <div className="flex justify-between px-[10px] py-[10px] border border-[#E5E7EB] max-w-[270px] min-w-[270px] ">
-                                                                    <div className="">
-                                                                        <h2 className="text-[#111827] text-sm pb-[6px]">{newItem.heading}</h2>
-                                                                        <p className="text-[#4B5563] text-sm">{newItem.description}</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        )
-                                                    })}
-                                                </div>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
+
                             </div>
                         )}
                         {newActiveTab === 6 && (
@@ -2096,7 +2122,7 @@ const DataA = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2116,7 +2142,7 @@ const DataA = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2136,7 +2162,7 @@ const DataA = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2156,7 +2182,7 @@ const DataA = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2176,7 +2202,7 @@ const DataA = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2196,7 +2222,7 @@ const DataA = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2224,7 +2250,7 @@ const DataB = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2244,7 +2270,7 @@ const DataB = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2264,7 +2290,7 @@ const DataB = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2284,7 +2310,7 @@ const DataB = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2304,7 +2330,7 @@ const DataB = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2324,7 +2350,7 @@ const DataB = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2352,7 +2378,7 @@ const DataC = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2372,7 +2398,7 @@ const DataC = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2392,7 +2418,7 @@ const DataC = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2412,7 +2438,7 @@ const DataC = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2432,7 +2458,7 @@ const DataC = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2452,7 +2478,7 @@ const DataC = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2480,7 +2506,7 @@ const DataD = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2500,7 +2526,7 @@ const DataD = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2520,7 +2546,7 @@ const DataD = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2540,7 +2566,7 @@ const DataD = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2560,7 +2586,7 @@ const DataD = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2580,7 +2606,7 @@ const DataD = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2608,7 +2634,7 @@ const DataE = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2628,7 +2654,7 @@ const DataE = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2648,7 +2674,7 @@ const DataE = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2668,7 +2694,7 @@ const DataE = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2688,7 +2714,7 @@ const DataE = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2708,7 +2734,7 @@ const DataE = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2736,7 +2762,7 @@ const DataF = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2756,7 +2782,7 @@ const DataF = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2776,7 +2802,7 @@ const DataF = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2796,7 +2822,7 @@ const DataF = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2816,7 +2842,7 @@ const DataF = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2836,7 +2862,7 @@ const DataF = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2864,7 +2890,7 @@ const DataG = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2884,7 +2910,7 @@ const DataG = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2904,7 +2930,7 @@ const DataG = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2924,7 +2950,7 @@ const DataG = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2944,7 +2970,7 @@ const DataG = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,
@@ -2964,7 +2990,7 @@ const DataG = [
                 btnOne: 'buildings',
                 btnTwo: 'construction',
                 btnThree: 'amenda',
-                btnFour: 'this is a long tag',
+                btnFour: 'long tag',
                 isBtnOne: true,
                 isBtnTwo: true,
                 isBtnThree: true,

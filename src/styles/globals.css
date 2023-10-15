@@ -151,10 +151,21 @@ body {
   .modale-two {
     display: flex;
   }
-  
+
 }
 
-.image-section2  {
+@media (max-width: 1290px) {
+  .slider-image {
+    max-width: 800px;
+  }
+  .image-width {
+    max-width: 600px;
+    max-height: 600px;
+    min-height: 600px;
+  }
+}
+
+.image-section2 {
   padding: 0 150px;
 }
 
@@ -162,17 +173,22 @@ body {
   .image-section2 {
     padding: 0 20px;
   }
+
   .arrow-left {
     left: -10px;
   }
-  
+
   .arrow-right {
     right: -5px;
   }
-  
+
 }
 
 
 .slider-image {
   max-width: 1200px;
+}
+
+.image-width {
+
 }

@@ -14,9 +14,10 @@ const ModaleTwoImage = () => {
         setModale(!modale)
     }
 
-
-    const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-        initial: 0,
+    const [ref, instanceRef] = useKeenSlider<HTMLDivElement>({
+        slides: {
+            perView: 1,
+        },
         slideChanged(slider) {
             setCurrentSlide(slider.track.details.rel)
         },
@@ -54,11 +55,11 @@ const ModaleTwoImage = () => {
                         )}
                     </div>
                     <div className=' relative mb-[54px]'>
-                        <div ref={sliderRef} className='flex slider-image mx-auto overflow-hidden'>
+                        <div ref={ref} className='flex slider-image mx-auto overflow-hidden'>
                             {images.map((itme, index) => {
                                 return (
                                     <div className='keen-slider__slide w-full' key={index}>
-                                        <Image className='w-full max-h-[600px] 2xl:min-h-[824px] object-cover' src={itme.image} alt='people-img' width={1000} height={600} />
+                                        <Image className='w-full image-width mx-auto max-h-[600px] 2xl:min-h-[824px] object-cover' src={itme.image} alt='people-img' width={1000} height={600} />
                                     </div>
                                 )
                             })}
